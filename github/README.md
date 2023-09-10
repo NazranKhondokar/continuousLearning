@@ -17,7 +17,7 @@ Contents:
   Below the file name field, you'll find an option to add a commit message. Type in a meaningful message to describe the changes you're making.
   
 - Commit Changes:
-  Finally, click on the "Commit new file" or "Commit changes" button at the bottom.
+  Finally, click on the `Commit new file` or `Commit changes` button at the bottom.
 
 ## Author
 
