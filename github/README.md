@@ -1,7 +1,7 @@
 Contents:
-- [To create a folder in a GitHub repository:](#To-create-a-folder-in-a-GitHub-repository:)
+- [To create a folder in a GitHub repository](#To-create-a-folder-in-a-GitHub-repository)
 
-## To create a folder in a GitHub repository:
+## To create a folder in a GitHub repository
 
 - Navigate to Your Repository:
   Go to the main page of your repository on GitHub.
