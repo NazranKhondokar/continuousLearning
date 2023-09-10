@@ -1,9 +1,7 @@
-<a name="section"></a>
-Content of the section.
+Contents:
+- [To create a folder in a GitHub repository, you'll need to follow these steps:](#To-create-a-folder-in-a-GitHub-repository,-you'll-need-to-follow-these-steps:)
 
 ## To create a folder in a GitHub repository, you'll need to follow these steps:
-
-- [To create a folder in a GitHub repository, you'll need to follow these steps:](#section)
 
 - Navigate to Your Repository:
   Go to the main page of your repository on GitHub.
