@@ -22,7 +22,7 @@ Contents:
 ## Login for a specific remote git repository using token
 
 ```bash
-git remote set-url origin https://NazranKhondokar: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@github.com/NazranKhondokar/nazrankhondokar.github.io.git
+git remote set-url origin https://NazranKhondokar:<token>@github.com/NazranKhondokar/nazrankhondokar.github.io.git
 ```
 
 ## Author
