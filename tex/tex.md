@@ -2,7 +2,7 @@
 - Open the Terminal app on macOS
 - 
 
-- Instal mactex
+- Install mactex
 ```
 brew install --cask mactex
 ```
