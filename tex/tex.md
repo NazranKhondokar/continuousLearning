@@ -1,6 +1,5 @@
 ## Build PDF when run `.tex` file on VS Code
 - Open the Terminal app on macOS
-- 
 
 - Install mactex
 ```
