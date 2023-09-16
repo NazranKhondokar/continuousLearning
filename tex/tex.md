@@ -21,6 +21,17 @@ vi $HOME/.bash_profile
 ```
 - Append the following export command
 ```
-export PATH="$PATH:/Library/TeX/texbin
+export PATH="$PATH:/Library/TeX/texbin"
 ```
-- 
+- Save and close the file when using vim/vi as a text editor by pressing the [Esc], type `:wq` and press the [Enter] key. Then, to apply changes immediately enter the following source command
+```
+source $HOME/.bash_profile
+```
+- Finally, verify your new path settings, enter
+```
+echo "$PATH"
+```
+- Output
+```
+/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/bin:/Library/TeX/texbin
+```
