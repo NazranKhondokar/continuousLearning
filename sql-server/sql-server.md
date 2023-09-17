@@ -1,4 +1,4 @@
-## `STRING_AGG` function with subquery in first param
+## `STRING_AGG` function with subquery in first param not work so alternative solution is
 ```
 WITH TaughtSubjects AS (
 SELECT
