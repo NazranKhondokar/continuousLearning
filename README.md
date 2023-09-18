@@ -8,5 +8,5 @@
 - [SpringBoot](./spring-boot/spring-boot.md)
 - [SQLServer](./sql-server/sql-server.md)
 - [Github](./github/README.md)
-- [Tex](./tex/README.md)
+- [Tex](./tex/tex.md)
 - [MapStruct](./mapstruct/mapstruct.md)
