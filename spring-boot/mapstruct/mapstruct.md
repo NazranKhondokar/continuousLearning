@@ -1,3 +1,5 @@
+MapStruct is a tool that automates the process of creating mappings between Java bean types
+
 ## Installation
 - When using a modern version of Gradle (>= 4.6), you add something along the following lines to your build.gradle:
 ```
