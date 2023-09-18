@@ -9,4 +9,4 @@
 - [SQLServer](./sql-server/sql-server.md)
 - [Github](./github/README.md)
 - [Tex](./tex/tex.md)
-- [MapStruct](./mapstruct/mapstruct.md)
+- [MapStruct](./spring-boot/mapstruct/mapstruct.md)
