@@ -1,4 +1,4 @@
-MapStruct is a tool that automates the process of creating mappings between Java bean types
+Multi-layered applications often require to map between different object models (e.g. entities and DTOs). Writing such mapping code is a tedious and error-prone task. MapStruct aims at simplifying this work by automating it as much as possible.
 
 ## Installation
 - When using a modern version of Gradle (>= 4.6), you add something along the following lines to your build.gradle:
@@ -50,7 +50,7 @@ public interface JobInfoMapper {
 ```
 
 ## Call the mapper from service or other
-- Here `jobRepository.findJob(id)` return `JobExperienceProjection` after executing some query
+- Here `jobRepository.findJob(id)` returns `JobExperienceProjection` after executing some query
 ```
 ...
 import lombok.RequiredArgsConstructor;
@@ -72,3 +72,36 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService {
 }
 ```
 
+## If we need multiple sources but a single target then 
+- Create another source model
+```
+public interface EmploymentProjection {
+    Integer getRecommendedMeritPosition();
+    String getBatch();
+    String getRecruitedDesignationName();
+}
+```
+## Extend target model
+```
+
+```
+
+## Pass multi-source at Mapper
+```
+...
+    EmployeeJobInfoResponse mapToEmployeeJobInfoResponse(JobExperienceProjection experienceProjection, EmploymentProjection employmentProjection);
+...
+```
+
+## Call it from service
+```
+...
+    private final EmployeeJobExperienceDetailRepository jobRepository;
+    private final EmployeeEmploymentRepository employmentRepository;
+
+    @Override
+    public EmployeeJobInfoResponse findJobInfoById(Long id) {
+
+        return JobInfoMapper.MAPPER.mapToEmployeeJobInfoResponse(jobRepository.findJobById(id));
+    }...
+```
