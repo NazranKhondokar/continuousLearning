@@ -74,7 +74,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService {
 
 ## If we need multiple sources but a single target then 
 - Create another source model
-```
+```java
 public interface EmploymentProjection {
     Integer getRecommendedMeritPosition();
     String getBatch();
