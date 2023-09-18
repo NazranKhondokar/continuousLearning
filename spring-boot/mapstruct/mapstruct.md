@@ -65,7 +65,7 @@ public class EmployeeProfileServiceImpl implements EmployeeProfileService {
     private final EmployeeJobExperienceDetailRepository jobRepository;
 
     @Override
-    public EmployeeJobInfoResponse findJobInfoByNID(Long id) {
+    public EmployeeJobInfoResponse findJobInfoByID(Long id) {
 
         return JobInfoMapper.MAPPER.mapToEmployeeJobInfoResponse(jobRepository.findJob(id));
     }
