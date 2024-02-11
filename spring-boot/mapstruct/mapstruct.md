@@ -110,16 +110,16 @@ public class EmployeeJobInfoResponse {
 ## Pass multi-source at Mapper
 
 ```java
-...
+
     EmployeeJobInfoResponse mapToEmployeeJobInfoResponse(JobExperienceProjection experienceProjection,
                                                             EmploymentProjection employmentProjection);
-...
+
 ```
 
 ## Call it from service
 
 ```java
-...
+
     private final EmployeeJobExperienceDetailRepository jobRepository;
     private final EmployeeEmploymentRepository employmentRepository;
 
@@ -129,5 +129,5 @@ public class EmployeeJobInfoResponse {
         return JobInfoMapper.MAPPER.mapToEmployeeJobInfoResponse(jobRepository.findJobById(id),
                                                                 employmentRepository.findEmploymentById(id));
     }
-...
+
 ```
