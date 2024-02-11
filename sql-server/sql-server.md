@@ -20,3 +20,8 @@ FROM
 LEFT JOIN TaughtSubjects ON
 	ejedl.EMPLOYEE_JOB_EXPERIENCE_DETAIL_ID = TaughtSubjects.EMPLOYEE_JOB_EXPERIENCE_DETAIL_ID
 ```
+
+## If Bangla text shows ???? in output, then 'N' should concat first like
+```
+DECLARE @IS_RECOGNIZED_UNI_INST_REQUIRED NVARCHAR(4000) = N'স্বীকৃত বিশ্ববিদ্যালয় হতে '
+```
