@@ -1,5 +1,5 @@
 ## `STRING_AGG` function with subquery in first param not work so alternative solution is
-```
+```SQL
 WITH TaughtSubjects AS (
 SELECT
 	ejedts.EMPLOYEE_JOB_EXPERIENCE_DETAIL_ID,
@@ -22,6 +22,6 @@ LEFT JOIN TaughtSubjects ON
 ```
 
 ## If Bangla text shows ???? in output, then 'N' should concat first like
-```
+```SQL
 DECLARE @IS_RECOGNIZED_UNI_INST_REQUIRED NVARCHAR(4000) = N'স্বীকৃত বিশ্ববিদ্যালয় হতে '
 ```
