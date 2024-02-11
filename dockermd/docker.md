@@ -1,4 +1,5 @@
 ## Deployment with docker
-```docker
+- install 'sh' first
+```bash
 sh root@<ip> -p <port>
 ```
