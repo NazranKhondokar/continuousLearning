@@ -30,3 +30,8 @@ docker ps
 ```bash
 docker logs <containerId> --since=10m
 ```
+## Clean unused images 
+- Go to container directory
+```bash
+sudo docker system prune -af
+```
