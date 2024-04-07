@@ -13,3 +13,18 @@ brew install node
 ```bash
 brew install angular-cli
 ```
+
+- Check Angular CLI:
+```bash
+ng version
+```
+
+- Then move to any directory and create a new project:
+```bash
+sudo ng new <projectname>
+```
+
+- Then run project:
+```bash
+sudo ng serve
+```
