@@ -5,11 +5,12 @@
 # Table of Contents
 
 - [Git](./git/README.md)
-- [SpringBoot](./spring-boot/spring-boot.md)
-- [SQLServer](./sql-server/sql-server.md)
+- [SpringBoot](./spring-boot/README.md)
+- [SQLServer](./sql-server/README.md)
 - [Github](./github/README.md)
-- [Tex](./tex/tex.md)
-- [MapStruct](./spring-boot/mapstruct/mapstruct.md)
-- [Docker](./dockermd/docker.md)
+- [Tex](./tex/README.md)
+- [MapStruct](./spring-boot/mapstruct/README.md)
+- [Docker](./dockermd/README.md)
 - [Node](./node/README.md)
+- [Vim](./vim/README.md)
 
