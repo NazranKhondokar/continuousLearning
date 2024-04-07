@@ -1,6 +1,6 @@
 To update Node.js, we have several options based on the information from the sources provided:
 
-#Using Node Package Manager (npm):
+## Using Node Package Manager (npm):
 
 - Clear the cache with npm cache clean -f.
 ```bash
