@@ -9,4 +9,7 @@
 brew install node
 ```
 
-
+- Installation Angular CLI:
+```bash
+brew install angular-cli
+```
