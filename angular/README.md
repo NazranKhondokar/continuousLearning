@@ -29,7 +29,7 @@ sudo ng new <projectname>
 sudo ng serve
 ```
 
-- To avoid using sudo every time for `ng serve` on macOS, you can modify the file permissions to allow your user account to execute the command without requiring elevated privileges.
+- To avoid using `sudo` every time for `ng serve` on macOS, you can modify the file permissions to allow your user account to execute the command without requiring elevated privileges.
 ```bash
 which ng
 ```
