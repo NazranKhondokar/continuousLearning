@@ -1,25 +1,25 @@
 - Install
-bash```
+```bash
 brew install rabbitmq
 ```
 
 - Show detail
-bash```
+```bash
 brew info rabbitmq
 ```
 
 - Start
-bash```
+```bash
 brew services start rabbitmq
 ```
 
 - Login to `http://localhost:15672/`
-bash```
+```bash
 username: guest
 password: guest
 ```
 
 - Start
-bash```
+```bash
 brew services stop rabbitmq
 ```
