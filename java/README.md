@@ -25,3 +25,9 @@ source ~/.bashrc
 echo $JAVA_HOME
 ```
 - It should output `/usr/lib/jvm/java-17-openjdk-amd64`
+
+## Increase heap size on `./gradlew`
+- Check the available jdks
+```bash
+./gradlew bootRun --no-daemon -Dorg.gradle.jvmargs="-Xms512m -Xmx2048m"
+```
