@@ -11,3 +11,11 @@ sudo apt install visualvm
 ```bash
 sudo visualvm
 ```
+- Heap Monitor panel
+![Heap-monitor](heap-monitor.png)
+
+- Thread panel
+![Thread](thread.png)
+
+- Memory panel
+![Memory](memory.png)
