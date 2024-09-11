@@ -32,3 +32,7 @@ sudo systemctl enable redis-server.service
 ```bash
 sudo nano /etc/redis/redis.conf
 ```
+- Check Redis Logs
+```bash
+sudo journalctl -u redis-server
+```
