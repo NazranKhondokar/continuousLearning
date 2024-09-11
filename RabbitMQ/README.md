@@ -1,4 +1,4 @@
-- Install
+### Install on MAC
 ```bash
 brew install rabbitmq
 ```
