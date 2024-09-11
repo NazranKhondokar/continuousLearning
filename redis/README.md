@@ -24,3 +24,11 @@ redis-cli ping
 ```bash
 PONG
 ```
+- Configure Redis to start on boot (Optional)
+```bash
+sudo systemctl enable redis-server.service
+```
+- Edit Redis Configuration (Optional)
+```bash
+sudo nano /etc/redis/redis.conf
+```
