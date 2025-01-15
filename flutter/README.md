@@ -1,5 +1,4 @@
-# Code Standard
-### Flutter Best Practices for App Development
+# Flutter Best Practices for App Development
 
 Learn the best practices for Flutter developers to improve code quality, readability, maintainability, and productivity. Let’s get started:
 
