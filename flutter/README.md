@@ -227,4 +227,165 @@ SvgPicture.asset(
   width: 13.0,
 );
 ```
-By following these best practices, you can ensure that your Flutter app is efficient, maintainable, and scalable.
+## Performance Optimization
+
+### Avoid Unnecessary Widget Builds
+
+#### Use const constructors
+Whenever possible, use const constructors for immutable widgets.
+```dart
+// Bad
+return Text('Hello World');
+
+// Good
+return const Text('Hello World');
+```
+
+#### Use keys
+Keys help Flutter determine whether widgets should be reused or recreated.
+```dart
+// Bad
+return ListView(
+  children: items.map((item) => Text(item)).toList(),
+);
+
+// Good
+return ListView(
+  children: items.map((item) => Text(item, key: Key(item))).toList(),
+);
+```
+
+#### Use ListView.builder
+For long lists, use ListView.builder to lazily build list items.
+```dart
+// Bad
+return ListView(
+  children: [
+    Text('Item 1'),
+    Text('Item 2'),
+    // More items...
+  ],
+);
+
+// Good
+return ListView.builder(
+  itemCount: items.length,
+  itemBuilder: (context, index) {
+    return Text(items[index]);
+  },
+);
+```
+
+#### Cache Images
+Use CachedNetworkImage to cache images for better performance.
+```dart
+CachedNetworkImage(
+  imageUrl: "https://example.com/image.jpg",
+  placeholder: (context, url) => CircularProgressIndicator(),
+  errorWidget: (context, url, error) => Icon(Icons.error),
+);
+```
+
+#### Lazy Loading
+Implement lazy loading for long lists or paginated data.
+```dart
+LazyLoadScrollView(
+  onEndOfPage: () => fetchMoreData(),
+  child: ListView.builder(
+    itemCount: items.length,
+    itemBuilder: (context, index) {
+      return ListTile(title: Text(items[index]));
+    },
+  ),
+);
+```
+
+### Network Optimization
+
+#### Choose the Right HTTP Client
+Use http package for basic requests or Dio for advanced features like interceptors, retries, and timeouts.
+```dart
+// Example with Dio
+Dio dio = Dio();
+Future fetchData() async {
+  try {
+    var response = await dio.get('https://example.com/data');
+    print(response.data);
+  } catch (e) {
+    print(e);
+  }
+}
+```
+
+#### Implement Caching
+- Use shared_preferences or hive for device-level caching.
+- Use API-level caching to reduce the number of calls to the server.
+
+#### Data Compression
+- Compress data before sending to reduce network usage.
+- Consider using gzip compression.
+
+#### Error Handling
+- Implement robust error handling to gracefully handle network failures.
+- Provide informative error messages to the user.
+
+#### Progress Indicators
+Display progress indicators during network requests to improve user experience.
+
+#### API Optimization
+Minimize data transfer by sending or receiving only necessary data.
+
+### Image Optimization
+
+#### Use CachedNetworkImage
+Efficiently loads and caches images.
+
+#### Compress Images
+Reduce image size without compromising quality.
+
+#### Use Placeholders
+Display placeholders while images are loading.
+
+#### Lazy Loading
+Load images only when needed to improve performance.
+
+### Data Fetching Optimization
+
+#### Pagination
+Load data in chunks to improve performance and reduce initial load time.
+
+#### Infinite Scrolling
+Load more data as the user scrolls.
+
+#### Selective Field Selection
+Fetch only required fields from the server or database.
+
+### Memory Management
+
+#### Dispose Controllers
+Always dispose of controllers like TextEditingController, AnimationController, etc., to free up resources.
+```dart
+class MyWidget extends StatefulWidget {
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(controller: _controller);
+  }
+}
+```
+
+#### Memory Leaks
+- Use tools like Flutter DevTools to identify memory leaks.
+- Pay attention to global variables and static fields.
