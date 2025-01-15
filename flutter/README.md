@@ -227,6 +227,122 @@ SvgPicture.asset(
   width: 13.0,
 );
 ```
+
+---
+
+### Principles of Clean Code  
+
+#### Naming Conventions  
+**Variables and Methods**  
+Use camelCase for variables, functions, and parameter names. Descriptive names improve readability.  
+
+```dart
+// Bad
+var x = 10;
+void foo() {}
+
+// Good
+var itemCount = 10;
+void fetchData() {}
+```  
+
+**Classes**  
+Use PascalCase for class names. Names should reflect the entity or concept.  
+
+```dart
+// Bad
+class Foo {}
+
+// Good
+class HomeViewModel {}
+```  
+
+**File Name**  
+Use snake_case for file names.  
+
+---
+
+#### Consistent Formatting  
+
+**Indentation**  
+Use consistent indentation (typically 2 spaces for Dart).  
+
+**Style Guide**  
+Use tools like `flutter_lints` to enforce coding standards.  
+
+**Braces**  
+Always use braces for conditional statements and loops.  
+
+```dart
+// Bad
+if (condition)
+  doSomething();
+
+// Good
+if (condition) {
+  doSomething();
+}
+```  
+
+---
+
+#### Simplicity  
+Simplify logic by breaking down complex logic into smaller, manageable functions.  
+
+```dart
+// Bad
+bool isEven(int number) {
+  if (number % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Good
+bool isEven(int number) => number % 2 == 0;
+```  
+
+---
+
+#### Code Reviews  
+Regular peer code reviews ensure adherence to standards and improve code quality.  
+
+---
+
+### Best Practices in Flutter  
+
+#### Organizing Your Project  
+
+**Data Layer**  
+Handles data retrieval and storage.  
+
+```
+lib/
+├── data/
+│   ├── models/
+│   └── data sources/
+```  
+
+**Domain Layer**  
+Contains business logic and use cases.  
+
+```
+├── domain/
+│   ├── provider/
+│   └── repositories/
+```  
+
+**Presentation Layer**  
+Manages UI and user interaction.  
+
+```
+└── presentation/
+    ├── screens/
+    └── widgets/
+```  
+ 
+
 ## Performance Optimization
 
 ### Avoid Unnecessary Widget Builds
