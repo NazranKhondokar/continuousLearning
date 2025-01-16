@@ -101,3 +101,62 @@ implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
     exclude group: 'org.hibernate', module: 'hibernate-validator' // Exclude Hibernate Validator
 }
 ```
+## **3. Logging**:
+   - **Tip**: Use logging effectively for troubleshooting and monitoring.
+   - **Best Practice**: RUtilize SLF4J with a logging implementation like Logback. Configure log levels appropriately and use structured logging for better readability.
+
+### **Add Dependencies to `build.gradle`**
+
+Add the required dependencies for SLF4J and Logback:
+
+```gradle
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+```
+
+### **Use SLF4J in Your Spring Boot Application**
+
+Use `org.slf4j.Logger` for logging in your application.
+
+#### Example: `ExampleController.java`
+
+```java
+package com.example.logging;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ExampleController {
+
+    private static final Logger logger = LoggerFactory.getLogger(LoggingExampleController.class);
+
+    @GetMapping("/log-example")
+    public String logExample() {
+        logger.info("Info level log message");
+        logger.debug("Debug level log message");
+        logger.warn("Warn level log message");
+        logger.error("Error level log message");
+
+        return "Check the logs for log messages!";
+    }
+}
+```
+
+### **Set Log Levels in `application.yml`**
+
+You can override the log levels dynamically via `application.yml`:
+
+```yaml
+logging:
+  level:
+    root: INFO
+    com.example.logging: DEBUG
+  file:
+    name: logs/application.log
+```
