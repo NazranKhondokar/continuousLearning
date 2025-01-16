@@ -340,6 +340,113 @@ public class UserService {
 ## **6. Security**:
    - **Tip**: Prioritize application security from the start.
    - **Best Practice**: Implement secure coding practices, use Spring Security for authentication and authorization, and stay updated on security patches. Regularly conduct security audits.
+
+```
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+}
+```
+
+### **`SecurityConfig.java`**
+```java
+package com.example.demo.config;
+
+import com.example.securitydemo.service.JwtService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    private final UserDetailsService userDetailsService;
+
+    public SecurityConfig(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http.csrf().disable()
+                   .authorizeHttpRequests()
+                   .requestMatchers("/auth/**").permitAll()
+                   .anyRequest().authenticated()
+                   .and()
+                   .build();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        return http.getSharedObject(AuthenticationManagerBuilder.class)
+                   .userDetailsService(userDetailsService)
+                   .passwordEncoder(passwordEncoder())
+                   .and()
+                   .build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+### **`JwtService.java`**
+```java
+package com.example.demo.service;
+
+import com.example.securitydemo.util.JwtUtil;
+import org.springframework.stereotype.Service;
+
+@Service
+public class JwtService {
+    private final JwtUtil jwtUtil;
+
+    public JwtService(JwtUtil jwtUtil) {
+        this.jwtUtil = jwtUtil;
+    }
+
+    public String generateToken(String username) {
+        return jwtUtil.generateToken(username);
+    }
+}
+```
+
+### **`JwtUtil.java`**
+```java
+package com.example.demo.util;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+
+@Component
+public class JwtUtil {
+    private static final String SECRET_KEY = "mysecretkey";
+    private static final long EXPIRATION_TIME = 86400000; // 1 day
+
+    public String generateToken(String username) {
+        return Jwts.builder()
+                   .setSubject(username)
+                   .setIssuedAt(new Date())
+                   .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                   .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                   .compact();
+    }
+}
+```
 ---
 ## **7. Testing**:
    - **Tip**: Embrace a comprehensive testing strategy.
@@ -384,5 +491,4 @@ public class UserService {
 ## **17. Monitoring and Alerting**:
    - **Tip**: Set up monitoring and alerting for proactive issue resolution.
    - **Best Practice**: Implement tools for application performance monitoring (APM) and set up alerts for critical thresholds. This helps identify and address issues before they impact users.
-
 ---
