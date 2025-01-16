@@ -132,7 +132,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ExampleController {
+public class LoggingExampleController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggingExampleController.class);
 
@@ -159,4 +159,82 @@ logging:
     com.example.logging: DEBUG
   file:
     name: logs/application.log
+```
+
+## **4. Exception Handling**:
+   - **Tip**: Plan for graceful error handling.
+   - **Best Practice**: Implement a centralized exception handling strategy using @ControllerAdvice and provide meaningful error responses. Log exceptions with relevant details for debugging.
+
+### **Create a Custom Exception Class**
+```java
+package com.example.exception;
+
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+```
+
+
+### **Create a Global Exception Handler using `@ControllerAdvice`**
+```java
+package com.example.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("message", ex.getMessage());
+        response.put("status", HttpStatus.NOT_FOUND.value());
+        response.put("error", HttpStatus.NOT_FOUND.getReasonPhrase());
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> handleGlobalException(Exception ex, WebRequest request) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("message", "An unexpected error occurred");
+        response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+        response.put("error", HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+
+### **Update a Sample Controller**
+```java
+package com.example.controller;
+
+import com.example.exception.ResourceNotFoundException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SampleController {
+
+    @GetMapping("/api/resource")
+    public String getResource(@RequestParam String id) {
+        if ("123".equals(id)) {
+            return "Resource found!";
+        } else {
+            throw new ResourceNotFoundException("Resource with ID " + id + " not found.");
+        }
+    }
+}
 ```
