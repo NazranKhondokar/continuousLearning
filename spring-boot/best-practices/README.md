@@ -31,7 +31,7 @@ src
                 └── example
                     └── projectname     # Unit and integration tests
 ```
-
+---
 ## **2. Dependency Management**:
    - **Tip**: Be mindful of your project’s dependencies.
    - **Best Practice**: Regularly review and update dependencies using tools like Spring Boot’s built-in dependency management. Avoid unnecessary dependencies to keep your application lightweight.
@@ -101,6 +101,7 @@ implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
     exclude group: 'org.hibernate', module: 'hibernate-validator' // Exclude Hibernate Validator
 }
 ```
+---
 ## **3. Logging**:
    - **Tip**: Use logging effectively for troubleshooting and monitoring.
    - **Best Practice**: RUtilize SLF4J with a logging implementation like Logback. Configure log levels appropriately and use structured logging for better readability.
@@ -160,7 +161,7 @@ logging:
   file:
     name: logs/application.log
 ```
-
+---
 ## **4. Exception Handling**:
    - **Tip**: Plan for graceful error handling.
    - **Best Practice**: Implement a centralized exception handling strategy using @ControllerAdvice and provide meaningful error responses. Log exceptions with relevant details for debugging.
@@ -238,3 +239,102 @@ public class SampleController {
     }
 }
 ```
+---
+## **5. Database Interaction**:
+   - **Tip**: Optimize database interactions for performance.
+   - **Best Practice**: Use Spring Data JPA for efficient database access. Implement proper indexing, caching, and connection pooling. Leverage query optimization techniques and be cautious with lazy loading.
+
+### **Gradle Build Configuration (`build.gradle`)**
+
+```groovy
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'com.h2database:h2' // For testing; use proper DB in production
+}
+
+```
+
+### **Application Properties (`application.yml`)**
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+    type: simple # Simple cache implementation
+```
+
+### **Create the Entity (`User.java`)**
+
+```java
+package com.example.demo.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name = "users", indexes = {
+    @Index(name = "idx_email", columnList = "email", unique = true)
+})
+@Getter
+@Setter
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+}
+```
+
+### **Create the Repository (`UserRepository.java`)**
+
+```java
+package com.example.demo.repository;
+
+import com.example.demo.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+}
+```
+### **Create the Service (`UserService.java`)**
+
+```java
+package com.example.demo.service;
+
+import com.example.demo.entity.User;
+import com.example.demo.repository.UserRepository;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class UserService {
+    private final UserRepository userRepository;
+
+    @Cacheable("users")
+    public Optional<User> findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+}
+```
+---
+
