@@ -2,13 +2,16 @@
 - **Project Name:** My Bitcoin Canvas
 - **Reporting Period:** 13-01-2025 to 17-01-2025
 - **Report Date:** 17-01-2025 12:00 PM (BD Time)
-- **Development Team Location:** Bangladesh  
-- **Review Team Location:** Ukraine
-
 
 #### 1. Sprint Overview  
 - **Sprint Name:** Sprint 3
 - **Sprint Duration:** 13-01-2025 to 27-01-2025
+
+#### 4. Task Completion Summary
+
+- **Total Tasks Completed (Done) (Bangladesh Team):** 9
+- **Total Tasks Under Review (Ukrain Team):** 7
+- **Total Tasks Pending (TODO):** 0
 
 #### 2. Sprint Progress and Blockers
 - The development team covered all todo 9 tasks but 7 tasks are still under review.
@@ -27,13 +30,6 @@
 | MBC-53   | [BE] Profile settings menu and Personal info    | 8H |  Nazran Khondokar     | Reviewed      |
 | MBC-55   | [BE] Preferred Exchange/ Default Exchange  | 12H |   Alhaj Uddin      | Done      |
 | MBC-56   | [BE] Theme settings  | 1H |   Nazran Khondokar     | Reviewed      |
-
-
-#### 4. Task Completion Summary
-
-- **Total Tasks Completed (Done) (Bangladesh Team):** 9
-- **Total Tasks Under Review (Ukrain Team):** 7
-- **Total Tasks Pending (TODO):** 0
 
 
 #### 5. Next Steps & Upcoming Tasks
