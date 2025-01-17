@@ -11,7 +11,7 @@
 
 - **Total Tasks Completed (Done) (Bangladesh Team):** 9
 - **Total Tasks Under Review (Ukrain Team):** 7
-- **Total Tasks Pending (TODO):** 1
+- **Total Tasks Pending (In Progress):** 1
 
 #### 3. Sprint Progress and Blockers
 - The development team covered todo 9 tasks, 1 in progress but 7 tasks are still under review.
