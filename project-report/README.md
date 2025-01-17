@@ -33,5 +33,5 @@
 
 
 #### 5. Next Steps & Upcoming Tasks
-- **Upcoming Tasks:** Supcription task
-- **Dependencies:** Waiting for task description
+- **Upcoming Tasks:** Subscription task.
+- **Dependencies:** Waiting for the task description.
