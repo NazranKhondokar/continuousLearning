@@ -1,7 +1,7 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
 - **Reporting Period:** 13-01-2025 to 17-01-2025
-- **Report Date:** 17-01-2025
+- **Report Date:** 17-01-2025 12:00 PM (BD Time)
 - **Development Team Location:** Bangladesh  
 - **Review Team Location:** Ukraine
 
