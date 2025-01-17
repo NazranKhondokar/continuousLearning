@@ -5,15 +5,16 @@
 - **Development Team Location:** Bangladesh  
 - **Review Team Location:** Ukraine
 
----
 
 #### 1. Sprint Overview  
 - **Sprint Name:** Sprint 3
 - **Sprint Duration:** 13-01-2025 to 27-01-2025
 
----
+#### 2. Sprint Progress and Blockers
+- The development team covered all todo 9 tasks but 7 tasks are still under review.
+- There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 
-#### 2. Jira Task Breakdown
+#### 3. Jira Task Breakdown
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
@@ -27,25 +28,13 @@
 | MBC-55   | [BE] Preferred Exchange/ Default Exchange  | 12H |   Alhaj Uddin      | Done      |
 | MBC-56   | [BE] Theme settings  | 1H |   Nazran Khondokar     | Reviewed      |
 
----
 
-#### 3. Task Completion Summary
+#### 4. Task Completion Summary
 
 - **Total Tasks Completed (Done) (Bangladesh Team):** 9
 - **Total Tasks Under Review (Ukrain Team):** 7
 - **Total Tasks Pending (TODO):** 0
 
----
-
-#### 4. Sprint Progress and Blockers
-
-**Sprint Progress:**
-- The development team covered all todo 9 tasks but 7 tasks are still under review.
-
-**Blockers/Challenges:**
-- There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
-
----
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:** Supcription task
