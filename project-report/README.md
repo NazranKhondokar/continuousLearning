@@ -7,17 +7,17 @@
 - **Sprint Name:** Sprint 3
 - **Sprint Duration:** 13-01-2025 to 27-01-2025
 
-#### 4. Task Completion Summary
+#### 2. Task Completion Summary
 
 - **Total Tasks Completed (Done) (Bangladesh Team):** 9
 - **Total Tasks Under Review (Ukrain Team):** 7
 - **Total Tasks Pending (TODO):** 0
 
-#### 2. Sprint Progress and Blockers
+#### 3. Sprint Progress and Blockers
 - The development team covered all todo 9 tasks but 7 tasks are still under review.
 - There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 
-#### 3. Jira Task Breakdown
+#### 4. Jira Task Breakdown
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
