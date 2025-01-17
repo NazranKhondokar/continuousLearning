@@ -451,6 +451,195 @@ public class JwtUtil {
 ## **7. Testing**:
    - **Tip**: Embrace a comprehensive testing strategy.
    - **Best Practice**: Write unit tests, integration tests, and end-to-end tests. Leverage tools like JUnit and Mockito. Use Spring Boot’s testing annotations for effective testing.
+
+### **1. Project Setup with Gradle**
+```gradle
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
+}
+```
+
+### **2. Unit Testing**
+#### `CalculatorService.java`
+
+```java
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CalculatorService {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+```
+
+#### `CalculatorServiceTest.java`
+
+```java
+package com.example.demo.service;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CalculatorServiceTest {
+
+    private final CalculatorService calculatorService = new CalculatorService();
+
+    @Test
+    void testAdd() {
+        int result = calculatorService.add(3, 7);
+        assertEquals(10, result);
+    }
+
+    @Test
+    void testSubtract() {
+        int result = calculatorService.subtract(10, 3);
+        assertEquals(7, result);
+    }
+}
+```
+
+### **3. Integration Testing**
+
+**Scenario:** Test a REST API endpoint with an in-memory database.
+
+#### `CalculatorController.java`
+
+```java
+package com.example.demo.controller;
+
+import com.example.demo.service.CalculatorService;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/calculator")
+public class CalculatorController {
+
+    private final CalculatorService calculatorService;
+
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
+    }
+
+    @GetMapping("/add")
+    public int add(@RequestParam int a, @RequestParam int b) {
+        return calculatorService.add(a, b);
+    }
+
+    @GetMapping("/subtract")
+    public int subtract(@RequestParam int a, @RequestParam int b) {
+        return calculatorService.subtract(a, b);
+    }
+}
+```
+
+#### `CalculatorControllerIT.java`
+
+```java
+package com.example.demo.controller;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class CalculatorControllerIT {
+
+    @LocalServerPort
+    private int port;
+
+    private final TestRestTemplate restTemplate = new TestRestTemplate();
+
+    @Test
+    void testAddEndpoint() {
+        String url = "http://localhost:" + port + "/api/calculator/add?a=5&b=3";
+        int result = restTemplate.getForObject(url, Integer.class);
+        assertEquals(8, result);
+    }
+
+    @Test
+    void testSubtractEndpoint() {
+        String url = "http://localhost:" + port + "/api/calculator/subtract?a=10&b=4";
+        int result = restTemplate.getForObject(url, Integer.class);
+        assertEquals(6, result);
+    }
+}
+```
+
+### **4. End-to-End Testing**
+
+**Scenario:** Simulate full application flow with `MockMvc`.
+
+#### `CalculatorControllerE2ETest.java`
+
+```java
+package com.example.demo.controller;
+
+import com.example.demo.service.CalculatorService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+
+@WebMvcTest(CalculatorController.class)
+class CalculatorControllerE2ETest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private CalculatorService calculatorService;
+
+    @Test
+    void testAddEndpoint() throws Exception {
+        when(calculatorService.add(3, 5)).thenReturn(8);
+
+        mockMvc.perform(get("/api/calculator/add")
+                .param("a", "3")
+                .param("b", "5"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("8"));
+    }
+
+    @Test
+    void testSubtractEndpoint() throws Exception {
+        when(calculatorService.subtract(10, 4)).thenReturn(6);
+
+        mockMvc.perform(get("/api/calculator/subtract")
+                .param("a", "10")
+                .param("b", "4"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("6"));
+    }
+}
+```
+
+### **5. Running the Tests**
+
+Run tests with Gradle:
+
+```bash
+./gradlew test
+```
 ---
 ## **8. Performance Monitoring**:
    - **Tip**: Monitor your application’s performance in real time.
