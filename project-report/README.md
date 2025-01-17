@@ -11,10 +11,10 @@
 
 - **Total Tasks Completed (Done) (Bangladesh Team):** 9
 - **Total Tasks Under Review (Ukrain Team):** 7
-- **Total Tasks Pending (TODO):** 0
+- **Total Tasks Pending (TODO):** 1
 
 #### 3. Sprint Progress and Blockers
-- The development team covered all todo 9 tasks but 7 tasks are still under review.
+- The development team covered todo 9 tasks, 1 in progress but 7 tasks are still under review.
 - There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 
 #### 4. Jira Task Breakdown
@@ -30,7 +30,7 @@
 | MBC-53   | [BE] Profile settings menu and Personal info    | 8H |  Nazran Khondokar     | Reviewed      |
 | MBC-55   | [BE] Preferred Exchange/ Default Exchange  | 12H |   Alhaj Uddin      | Done      |
 | MBC-56   | [BE] Theme settings  | 1H |   Nazran Khondokar     | Reviewed      |
-
+| MBC-36   | [FE] Profile settings menu, Personal info and Log Out        | 6H | Shoroardi Sumon   | In Progress      |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:** Subscription task.
