@@ -8,6 +8,8 @@ Implementing best practices in Spring Boot applications enhances maintainability
 - [Database Interaction](#5-database-interaction)
 - [Security](#6-security)
 - [Testing](#7-testing)
+- [Performance Monitoring]
+- [(#7-testing)]
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
@@ -653,10 +655,225 @@ Run tests with Gradle:
 ## **8. Performance Monitoring**:
    - **Tip**: Monitor your application’s performance in real time.
    - **Best Practice**: Integrate Spring Boot Actuator for production-ready features like health checks, metrics, and monitoring endpoints. Use tools like Micrometer for custom metrics.
+Here’s a best-practice example for integrating **Spring Boot Actuator** and **Micrometer** with **Spring Boot 3**, **Java 17**, and **Gradle 8**. This example demonstrates setting up real-time monitoring and performance metrics with integration into monitoring systems like **Prometheus** or **Grafana**.
+
+### **1. Add Dependencies**
+
+```groovy
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+}
+```
+
+### **2. Configure Actuator Endpoints**
+
+#### `application.yml` Example:
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics,prometheus" # Expose specific endpoints
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true # Enable Prometheus metrics
+```
+
+### **3. Customize Metrics with Micrometer**
+#### Custom Metrics Example:
+```java
+import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CustomMetricsExample {
+
+    private final MeterRegistry meterRegistry;
+
+    public CustomMetricsExample(MeterRegistry meterRegistry) {
+        this.meterRegistry = meterRegistry;
+    }
+
+    @Bean
+    public CommandLineRunner initializeCustomMetrics() {
+        return args -> {
+            // Example: Custom Counter
+            meterRegistry.counter("custom.metrics.example.counter").increment();
+
+            // Example: Timer
+            meterRegistry.timer("custom.metrics.example.timer").record(() -> {
+                // Simulate some operation
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        };
+    }
+}
+```
+
+### **4. Health Checks**
+#### Custom Health Indicator Example:
+```java
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CustomHealthIndicator implements HealthIndicator {
+
+    @Override
+    public Health health() {
+        // Example: Check if a service or resource is reachable
+        boolean serviceUp = checkServiceHealth();
+        if (serviceUp) {
+            return Health.up().withDetail("CustomService", "Available").build();
+        }
+        return Health.down().withDetail("CustomService", "Unavailable").build();
+    }
+
+    private boolean checkServiceHealth() {
+        // Simulate a health check (e.g., database, API call)
+        return true; // Replace with actual check
+    }
+}
+```
+
+### **5. Testing the Setup**
+Run the application and visit the Actuator endpoints:
+
+- **Health Check**: `http://localhost:8080/actuator/health`
+- **Metrics**: `http://localhost:8080/actuator/metrics`
+- **Prometheus**: `http://localhost:8080/actuator/prometheus`
 ---
 ## **9. Documentation**:
    - **Tip**: Document your code and APIs.
    - **Best Practice**: Generate API documentation using tools like Swagger. Maintain clear and up-to-date documentation for both code and external APIs.
+
+### Step 1: Add Dependencies in `build.gradle`
+```groovy
+dependencies {
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // Adjust version as necessary
+}
+```
+
+### Step 2: Configure OpenAPI in the Application
+
+```java
+package com.example.documentation;
+
+import io.swagger.v3.oas.models.ExternalDocumentation;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class OpenApiConfig {
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("My Spring Boot API")
+                        .description("This is the API documentation for my Spring Boot application.")
+                        .version("1.0.0")
+                        .contact(new Contact()
+                                .name("Nazran Khondokar")
+                                .email("nazran@example.com")
+                                .url("https://example.com"))
+                        .license(new License()
+                                .name("Apache 2.0")
+                                .url("https://www.apache.org/licenses/LICENSE-2.0")))
+                .externalDocs(new ExternalDocumentation()
+                        .description("Full Documentation")
+                        .url("https://example.com/docs"));
+    }
+}
+```
+
+### Step 3: Annotate Controllers for API Documentation
+
+```java
+package com.example.documentation.controller;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/v1/users")
+@Tag(name = "User Management", description = "APIs for managing users")
+public class UserController {
+
+    @Operation(summary = "Get User by ID", 
+               description = "Retrieve a user's details by their unique ID", 
+               responses = {
+                   @ApiResponse(responseCode = "200", description = "User found", 
+                                content = @Content(schema = @Schema(implementation = UserDTO.class))),
+                   @ApiResponse(responseCode = "404", description = "User not found", content = @Content)
+               })
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
+        // Sample implementation
+        UserDTO user = new UserDTO(id, "John Doe", "john.doe@example.com");
+        return ResponseEntity.ok(user);
+    }
+
+    @Operation(summary = "Create User", description = "Add a new user")
+    @PostMapping
+    public ResponseEntity<String> createUser(@RequestBody UserDTO user) {
+        // Sample implementation
+        return new ResponseEntity<>("User created successfully", HttpStatus.CREATED);
+    }
+}
+```
+
+### Step 4: Create DTOs for Documentation
+
+```java
+package com.example.documentation.controller;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "User data transfer object")
+public class UserDTO {
+
+    @Schema(description = "Unique identifier of the user", example = "1")
+    private Long id;
+
+    @Schema(description = "Full name of the user", example = "John Doe")
+    private String name;
+
+    @Schema(description = "Email address of the user", example = "john.doe@example.com")
+    private String email;
+}
+```
+
+### Step 5: Access Swagger UI
+
+Run your application and navigate to:
+
+- Swagger UI: `http://localhost:8080/swagger-ui.html`
+- OpenAPI JSON: `http://localhost:8080/v3/api-docs`
 ---
 ## **10. Transaction Management**:
    - **Tip**: Understand transaction boundaries and isolation levels.
