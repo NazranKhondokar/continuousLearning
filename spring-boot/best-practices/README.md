@@ -1467,7 +1467,114 @@ Run tests with coverage:
 ./gradlew test jacocoTestReport
 ```
 ---
-## **17. Monitoring and Alerting**:
-   - **Tip**: Set up monitoring and alerting for proactive issue resolution.
-   - **Best Practice**: Implement tools for application performance monitoring (APM) and set up alerts for critical thresholds. This helps identify and address issues before they impact users.
+## **17. Java 17 Best Practices**:
+
+### **Use Clear and Intuitive Naming Conventions**
+- **Classes**: Use nouns, e.g., `UserService`.
+- **Packages**: Use lowercase, e.g., `com.example.service`.
+- **Interfaces**: Use CamelCase, e.g., `UserRepository`.
+- **Variables**: Use mixedCase, e.g., `userCount`.
+- **Methods**: Use verbs, e.g., `calculateSum()`.
+
+
+### **Comment and Write Self-Documenting Code**
+- **Comment Example**:  
+  ```java
+  // Check if user is active
+  if (user.isActive()) { ... }
+  ```
+
+- **Self-Documenting Code**:  
+  ```java
+  if (user.isEligibleForDiscount()) { ... }
+  ```
+
+
+### **Write Descriptive Commit Messages**
+- Example:  
+  ```bash
+  git commit -m "Fix NullPointerException in user registration"
+  ```
+- Keep messages brief and focus on **what changed**.
+
+
+### **Avoid Empty Catch Blocks**
+- **Bad**:  
+  ```java
+  try {
+      int result = Integer.parseInt("abc");
+  } catch (NumberFormatException e) {
+      // Silent failure
+  }
+  ```
+- **Good**:  
+  ```java
+  try {
+      int result = Integer.parseInt("abc");
+  } catch (NumberFormatException e) {
+      System.err.println("Invalid number format: " + e.getMessage());
+  }
+  ```
+
+
+### **Handle NullPointerException Properly**
+- **Bad**:  
+  ```java
+  int count = company.getEmployees().size();
+  ```
+- **Good**:  
+  ```java
+  if (company != null && company.getEmployees() != null) {
+      int count = company.getEmployees().size();
+  }
+  ```
+
+
+### **Use Java Libraries Wisely**
+- Avoid overusing libraries; choose reliable ones.
+- Example: Prefer `java.util.stream` over adding new dependencies:
+  ```java
+  var sum = numbers.stream().mapToInt(Integer::intValue).sum();
+  ```
+
+### **Access Class Members Privately**
+- **Bad**:  
+  ```java
+  public String name;
+  ```
+- **Good**:  
+  ```java
+  private String name;
+
+  public void setName(String name) {
+      if (name == null || name.isBlank()) {
+          throw new IllegalArgumentException("Invalid name");
+      }
+      this.name = name;
+  }
+  ```
+
+
+### **Avoid Redundant Initializations**
+- **Bad**:  
+  ```java
+  private boolean active = false; // Default is already false
+  ```
+- **Good**:  
+  ```java
+  private boolean active;
+  ```
+
+
+### **Prevent Memory Leaks**
+- Always release resources:
+  ```java
+  try (var connection = dataSource.getConnection()) {
+      // Use connection
+  } catch (SQLException e) {
+      e.printStackTrace();
+  }
+  ```
+- Use tools like IntelliJ Memory Tab or Eclipse MAT to detect leaks.
+
 ---
