@@ -12,6 +12,7 @@ Implementing best practices in Spring Boot applications enhances maintainability
 - [9. Documentation](#9-documentation)
 - [10. Transaction Management](#10-transaction-management)
 - [11. Caching](#11-caching)
+- [12. Internationalization and Localization]
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
@@ -884,7 +885,7 @@ Run your application and navigate to:
    - **Tip**: Optimize performance with caching strategies.
    - **Best Practice**: Integrate caching mechanisms, such as Spring’s caching annotations or third-party caching solutions, to reduce redundant computations and database calls.
 
-### **1. Gradle Dependency**
+### **Gradle Dependency**
 
 ```gradle
 dependencies {
@@ -893,7 +894,7 @@ dependencies {
 }
 ```
 
-### **2. Enable Caching in the Application**
+### **Enable Caching in the Application**
 
 ```java
 package com.example.cache;
@@ -911,7 +912,7 @@ public class CacheApplication {
 }
 ```
 
-### **3. Cache Configuration**
+### **Cache Configuration**
 
 ```java
 package com.example.cache.config;
@@ -945,7 +946,7 @@ public class CacheConfig {
 }
 ```
 
-### **4. Use Caching in a Service**
+### **Use Caching in a Service**
 
 ```java
 package com.example.cache.service;
@@ -975,6 +976,113 @@ public class ProductService {
 ## **12. Internationalization and Localization**:
    - **Tip**: Plan for multi-language support from the beginning.
    - **Best Practice**: Utilize Spring’s internationalization features to support different languages and locales in your application.
+### **Configure `MessageSource` for Resource Bundles**  
+
+```java
+package com.example.config;
+
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
+
+import java.util.Locale;
+
+@Configuration
+public class InternationalizationConfig {
+
+    @Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("classpath:messages");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
+        localeResolver.setDefaultLocale(Locale.ENGLISH);
+        return localeResolver;
+    }
+}
+```
+
+### 3. **Create Message Resource Files**  
+Add message files in `src/main/resources`.  
+- **`messages.properties`** (default locale, e.g., English):  
+  ```properties
+  greeting=Hello, {0}!
+  ```
+  
+- **`messages_fr.properties`** (French locale):  
+  ```properties
+  greeting=Bonjour, {0}!
+  ```
+
+- **`messages_es.properties`** (Spanish locale):  
+  ```properties
+  greeting=¡Hola, {0}!
+  ```
+
+### **Implement a Controller for Testing**  
+
+```java
+package com.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Locale;
+
+@RestController
+public class GreetingController {
+
+    @Autowired
+    private MessageSource messageSource;
+
+    @GetMapping("/greet")
+    public String greet(
+            @RequestHeader(name = "Accept-Language", required = false) Locale locale) {
+        return messageSource.getMessage("greeting", new Object[]{"Nazran"}, locale);
+    }
+}
+```
+
+### **Testing the Application**  
+
+#### Example Requests:  
+- **Default (English):**
+  ```bash
+  curl -H "Accept-Language: en" http://localhost:8080/greet
+  ```
+  **Response:**  
+  ```
+  Hello, Nazran!
+  ```
+
+- **French:**  
+  ```bash
+  curl -H "Accept-Language: fr" http://localhost:8080/greet
+  ```
+  **Response:**  
+  ```
+  Bonjour, Nazran!
+  ```
+
+- **Spanish:**  
+  ```bash
+  curl -H "Accept-Language: es" http://localhost:8080/greet
+  ```
+  **Response:**  
+  ```
+  ¡Hola, Nazran!
+  ```
 ---
 ## **13. Continuous Integration and Continuous Deployment (CI/CD)**:
    - **Tip**: Automate your build and deployment processes.
