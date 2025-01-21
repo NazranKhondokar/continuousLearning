@@ -1,17 +1,17 @@
 Implementing best practices in Spring Boot applications enhances maintainability, scalability, and performance. Here are key recommendations:
 # Table of Contents
 
-- [Project Structure and Modularization](#1-project-structure-and-modularization)
-- [Dependency Management](#2-dependency-management)
-- [Logging](#3-logging)
-- [Exception Handling](#4-exception-handling)
-- [Database Interaction](#5-database-interaction)
-- [Security](#6-security)
-- [Testing](#7-testing)
-- [Performance Monitoring](#7-testing)
-- [Documentation](#7-testing)
-- [Transaction Management](#7-testing)
-- [Caching](#7-testing)
+- [1. Project Structure and Modularization](#1-project-structure-and-modularization)
+- [2. Dependency Management](#2-dependency-management)
+- [3. Logging](#3-logging)
+- [4. Exception Handling](#4-exception-handling)
+- [5. Database Interaction](#5-database-interaction)
+- [6. Security](#6-security)
+- [7. Testing](#7-testing)
+- [8. Performance Monitoring](#8-performance-monitoring)
+- [9. Documentation](#9-documentation)
+- [10. Transaction Management](#10-transaction-management)
+- [11. Caching](#11-caching)
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
