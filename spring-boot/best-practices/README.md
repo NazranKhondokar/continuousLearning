@@ -1288,6 +1288,94 @@ public class GreetingController {
 ## **15. Versioning APIs**:
    - **Tip**: Plan for future changes in your API design.
    - **Best Practice**: Implement versioning strategies for APIs to ensure backward compatibility and smooth transitions when introducing changes.
+### Key Best Practices for API Versioning:
+1. **Use URI versioning (Recommended)**: Include the version in the URL path (`/v1/resource`).
+2. **Header versioning**: Use a custom header (`X-API-Version: 1`).
+3. **Media Type versioning**: Define a version as part of the `Content-Type` (`application/vnd.api.v1+json`).
+
+Here, we'll focus on **URI versioning**, which is simple and widely adopted.
+
+### API Versioning with URI
+
+#### Project Structure
+```
+src/main/java
+└── com/example/versioning
+    ├── controller
+    │   ├── UserControllerV1.java
+    │   └── UserControllerV2.java
+    ├── dto
+    │   ├── UserV1.java
+    │   └── UserV2.java
+    ├── service
+    │   ├── UserServiceV1.java
+    │   └── UserServiceV2.java
+    └── VersioningApplication.java
+```
+#### Implementation
+
+##### DTOs
+
+###### `UserV1.java`
+```java
+public class UserV1 {
+    private String name;
+}
+```
+
+###### `UserV2.java`
+```java
+public class UserV2 {
+    private String firstName;
+    private String lastName;
+}
+```
+
+##### Controllers
+
+###### `UserControllerV1.java`
+```java
+import com.example.versioning.dto.UserV1;
+
+@RestController
+@RequestMapping("/api/v1/users")
+public class UserControllerV1 {
+
+    @GetMapping
+    public UserV1 getUser() {
+        return new UserV1("John Doe");
+    }
+}
+```
+
+###### `UserControllerV2.java`
+```java
+import com.example.versioning.dto.UserV2;
+
+@RestController
+@RequestMapping("/api/v2/users")
+public class UserControllerV2 {
+
+    @GetMapping
+    public UserV2 getUser() {
+        return new UserV2("John", "Doe");
+    }
+}
+```
+
+#### Testing the API
+
+**Version 1 Endpoint:**
+```bash
+curl http://localhost:8080/api/v1/users
+# Response: {"name":"John Doe"}
+```
+
+**Version 2 Endpoint:**
+```bash
+curl http://localhost:8080/api/v2/users
+# Response: {"firstName":"John","lastName":"Doe"}
+```
 ---
 ## **16. Code Quality and Code Reviews**:
    - **Tip**: Maintain high code quality standards.
