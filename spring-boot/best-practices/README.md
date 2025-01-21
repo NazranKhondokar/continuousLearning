@@ -13,6 +13,7 @@
 - [11. Caching](#11-caching)
 - [12. Internationalization and Localization](#12-internationalization-and-localization)
 - [13. Continuous Integration and Continuous Deployment (CI/CD)](#13-continuous-integration-and-continuous-deployment-cicd)
+- [14. Dependency Injection](#14-dependency-injection)
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
