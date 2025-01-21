@@ -1010,7 +1010,7 @@ public class InternationalizationConfig {
 }
 ```
 
-### 3. **Create Message Resource Files**  
+### **Create Message Resource Files**  
 Add message files in `src/main/resources`.  
 - **`messages.properties`** (default locale, e.g., English):  
   ```properties
@@ -1222,6 +1222,67 @@ sudo systemctl restart your-app-service
 ## **14. Dependency Injection**:
    - **Tip**: Leverage dependency injection for loose coupling.
    - **Best Practice**: Use Spring’s dependency injection to achieve inversion of control (IoC). Follow the SOLID principles to design modular and maintainable code.
+
+**Define an Interface**  
+This promotes loose coupling by allowing different implementations.
+
+```java
+package com.example.service;
+
+public interface GreetingService {
+    String getGreeting(String name);
+}
+```
+
+**Provide an Implementation**
+
+```java
+package com.example.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class GreetingServiceImpl implements GreetingService {
+
+    @Override
+    public String getGreeting(String name) {
+        return "Hello, " + name + "!";
+    }
+}
+```
+
+- The `@Service` annotation marks this class as a Spring-managed bean.
+
+**Inject the Service into a Controller**
+
+```java
+
+@RestController
+public class GreetingController {
+
+    private final GreetingService greetingService;
+
+    // Constructor-based Dependency Injection
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    @GetMapping("/greet")
+    public String greet(@RequestParam String name) {
+        return greetingService.getGreeting(name);
+    }
+}
+```
+
+- **Best Practice**: Use constructor injection for required dependencies, which ensures immutability and testability.
+
+### **Key Practices Demonstrated**
+1. **Loose Coupling**: Interface-based design decouples implementation details.
+2. **Inversion of Control**: Spring manages the instantiation and lifecycle of beans.
+3. **SOLID Principles**:
+   - **Single Responsibility**: Each class has one reason to change.
+   - **Dependency Inversion**: High-level modules depend on abstractions (`GreetingService`).
+4. **Constructor Injection**: Recommended for mandatory dependencies.
 ---
 ## **15. Versioning APIs**:
    - **Tip**: Plan for future changes in your API design.
