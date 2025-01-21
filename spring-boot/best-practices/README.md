@@ -13,6 +13,7 @@ Implementing best practices in Spring Boot applications enhances maintainability
 - [10. Transaction Management](#10-transaction-management)
 - [11. Caching](#11-caching)
 - [12. Internationalization and Localization]
+- [13. Continuous Integration and Continuous Deployment (CI/CD)]
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
@@ -1087,6 +1088,137 @@ public class GreetingController {
 ## **13. Continuous Integration and Continuous Deployment (CI/CD)**:
    - **Tip**: Automate your build and deployment processes.
    - **Best Practice**: Implement CI/CD pipelines to automate testing, building, and deploying your Spring Boot applications. Tools like Jenkins, GitLab CI, or GitHub Actions can be integrated.
+### **GitHub Actions Workflow File**
+
+Create a GitHub Actions workflow file in your repository at `.github/workflows/ci-cd.yml`:
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout code
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Set up Java
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: 'temurin'
+
+    # Cache Gradle dependencies
+    - name: Cache Gradle Dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.gradle/caches
+        key: gradle-cache-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          gradle-cache-${{ runner.os }}-
+
+    # Build and Test
+    - name: Build and Test
+      run: ./gradlew clean build
+
+    # Upload build artifacts (e.g., JAR file)
+    - name: Upload Artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-jar
+        path: build/libs/*.jar
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    # Checkout code
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Deploy JAR file
+    - name: Deploy to Server
+      env:
+        HOST: ${{ secrets.DEPLOY_HOST }}
+        USER: ${{ secrets.DEPLOY_USER }}
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" > deploy_key
+        chmod 600 deploy_key
+        scp -i deploy_key build/libs/*.jar $USER@$HOST:/path/to/deploy/
+        ssh -i deploy_key $USER@$HOST "systemctl restart your-app-service"
+```
+
+### **Best Practices Implemented in This Pipeline**
+
+1. **Branch Control**:
+   - CI runs on every pull request and push to the `main` branch.
+   - CD runs only when changes are pushed to the `main` branch.
+
+2. **Java Setup**:
+   - Uses the latest `actions/setup-java` to configure JDK 17.
+
+3. **Dependency Caching**:
+   - Caches Gradle dependencies to speed up builds.
+
+4. **Build Artifacts**:
+   - Stores the JAR file produced by the build.
+
+5. **Secure Deployment**:
+   - Uses secrets for deployment credentials and keys (`DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`).
+
+### **Additional Recommendations**
+
+- **Secrets Management**:
+  - Store sensitive information (e.g., host, user, and private key) securely in GitHub Secrets.
+
+- **Testing Frameworks**:
+  - Ensure integration and unit tests are robust by adding `test` tasks in the pipeline.
+
+- **Version Control**:
+  - Use a versioning tool like `GitVersion` or manually update the `build.gradle` file for versioning.
+
+- **Rollback Strategy**:
+  - Consider adding a step to deploy a previous version in case of failure.
+
+### **Service Management on Server**
+
+For production, ensure you have a system service to manage the application, e.g., a `systemd` service file:
+
+```ini
+[Unit]
+Description=Spring Boot Application
+After=network.target
+
+[Service]
+User=your-user
+ExecStart=/usr/bin/java -jar /path/to/deploy/your-app.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload and restart your service on deployment:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart your-app-service
+```
 ---
 ## **14. Dependency Injection**:
    - **Tip**: Leverage dependency injection for loose coupling.
