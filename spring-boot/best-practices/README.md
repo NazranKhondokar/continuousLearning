@@ -8,8 +8,10 @@ Implementing best practices in Spring Boot applications enhances maintainability
 - [Database Interaction](#5-database-interaction)
 - [Security](#6-security)
 - [Testing](#7-testing)
-- [Performance Monitoring]
-- [(#7-testing)]
+- [Performance Monitoring](#7-testing)
+- [Documentation](#7-testing)
+- [Transaction Management](#7-testing)
+- [Caching](#7-testing)
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
@@ -463,7 +465,7 @@ public class JwtUtil {
    - **Tip**: Embrace a comprehensive testing strategy.
    - **Best Practice**: Write unit tests, integration tests, and end-to-end tests. Leverage tools like JUnit and Mockito. Use Spring Boot’s testing annotations for effective testing.
 
-### **1. Project Setup with Gradle**
+### **Project Setup with Gradle**
 ```gradle
 dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -472,7 +474,7 @@ dependencies {
 }
 ```
 
-### **2. Unit Testing**
+### **Unit Testing**
 #### `CalculatorService.java`
 
 ```java
@@ -520,7 +522,7 @@ class CalculatorServiceTest {
 }
 ```
 
-### **3. Integration Testing**
+### **Integration Testing**
 
 **Scenario:** Test a REST API endpoint with an in-memory database.
 
@@ -589,8 +591,8 @@ class CalculatorControllerIT {
     }
 }
 ```
-
-### **4. End-to-End Testing**
+.
+### **End-to-End Testing**
 
 **Scenario:** Simulate full application flow with `MockMvc`.
 
@@ -644,7 +646,7 @@ class CalculatorControllerE2ETest {
 }
 ```
 
-### **5. Running the Tests**
+### **Running the Tests**
 
 Run tests with Gradle:
 
@@ -656,7 +658,7 @@ Run tests with Gradle:
    - **Tip**: Monitor your application’s performance in real time.
    - **Best Practice**: Integrate Spring Boot Actuator for production-ready features like health checks, metrics, and monitoring endpoints. Use tools like Micrometer for custom metrics.
 
-### **1. Add Dependencies**
+### **Add Dependencies**
 
 ```groovy
 dependencies {
@@ -665,7 +667,7 @@ dependencies {
 }
 ```
 
-### **2. Configure Actuator Endpoints**
+### **Configure Actuator Endpoints**
 
 #### `application.yml` Example:
 ```yaml
@@ -685,7 +687,7 @@ management:
         enabled: true # Enable Prometheus metrics
 ```
 
-### **3. Customize Metrics with Micrometer**
+### **Customize Metrics with Micrometer**
 #### Custom Metrics Example:
 ```java
 import io.micrometer.core.instrument.MeterRegistry;
@@ -722,7 +724,7 @@ public class CustomMetricsExample {
 }
 ```
 
-### **4. Health Checks**
+### **Health Checks**
 #### Custom Health Indicator Example:
 ```java
 import org.springframework.boot.actuate.health.Health;
@@ -749,7 +751,7 @@ public class CustomHealthIndicator implements HealthIndicator {
 }
 ```
 
-### **5. Testing the Setup**
+### **Testing the Setup**
 Run the application and visit the Actuator endpoints:
 
 - **Health Check**: `http://localhost:8080/actuator/health`
@@ -760,14 +762,14 @@ Run the application and visit the Actuator endpoints:
    - **Tip**: Document your code and APIs.
    - **Best Practice**: Generate API documentation using tools like Swagger. Maintain clear and up-to-date documentation for both code and external APIs.
 
-### Step 1: Add Dependencies in `build.gradle`
+### Add Dependencies in `build.gradle`
 ```groovy
 dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // Adjust version as necessary
 }
 ```
 
-### Step 2: Configure OpenAPI in the Application
+### Configure OpenAPI in the Application
 
 ```java
 package com.example.documentation;
@@ -804,7 +806,7 @@ public class OpenApiConfig {
 }
 ```
 
-### Step 3: Annotate Controllers for API Documentation
+### Annotate Controllers for API Documentation
 
 ```java
 package com.example.documentation.controller;
@@ -846,7 +848,7 @@ public class UserController {
 }
 ```
 
-### Step 4: Create DTOs for Documentation
+### Create DTOs for Documentation
 
 ```java
 package com.example.documentation.controller;
@@ -867,7 +869,7 @@ public class UserDTO {
 }
 ```
 
-### Step 5: Access Swagger UI
+### Access Swagger UI
 
 Run your application and navigate to:
 
