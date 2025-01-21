@@ -15,7 +15,7 @@
 - [13. Continuous Integration and Continuous Deployment (CI/CD)](#13-continuous-integration-and-continuous-deployment-cicd)
 - [14. Dependency Injection](#14-dependency-injection)
 - [15. Versioning APIs](#15-versioning-apis)
-- [16. Code Quality and Code Reviews](#15-versioning-apis)
+- [16. Code Quality and Code Reviews](#16-code-quality-and-code-reviews)
 - [17. Monitoring and Alerting](#15-versioning-apis)
 
 ## **1. Project Structure and Modularization**:
@@ -1437,29 +1437,6 @@ tasks.withType(com.github.spotbugs.SpotBugsTask).configureEach {
 Run the analysis with:
 ```bash
 ./gradlew check
-```
-
-#### **Dependency Vulnerability Scanning**
-Use tools like **OWASP Dependency Check** to identify vulnerabilities in dependencies.
-
-**Add OWASP Dependency Check Plugin:**
-
-```gradle
-plugins {
-    id 'org.owasp.dependencycheck' version '8.3.1'
-}
-
-dependencyCheck {
-    failBuildOnCVSS = 7
-    suppressionFile = 'dependency-check-suppressions.xml'
-    formats = ['HTML', 'JSON']
-    outputDirectory = "$buildDir/reports/dependency-check"
-}
-```
-
-Run the check with:
-```bash
-./gradlew dependencyCheckAnalyze
 ```
 
 #### **Comprehensive Unit and Integration Tests**
