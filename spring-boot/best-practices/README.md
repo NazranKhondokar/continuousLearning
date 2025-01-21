@@ -655,7 +655,6 @@ Run tests with Gradle:
 ## **8. Performance Monitoring**:
    - **Tip**: Monitor your application’s performance in real time.
    - **Best Practice**: Integrate Spring Boot Actuator for production-ready features like health checks, metrics, and monitoring endpoints. Use tools like Micrometer for custom metrics.
-Here’s a best-practice example for integrating **Spring Boot Actuator** and **Micrometer** with **Spring Boot 3**, **Java 17**, and **Gradle 8**. This example demonstrates setting up real-time monitoring and performance metrics with integration into monitoring systems like **Prometheus** or **Grafana**.
 
 ### **1. Add Dependencies**
 
