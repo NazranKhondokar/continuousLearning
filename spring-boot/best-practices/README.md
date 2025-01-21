@@ -16,7 +16,7 @@
 - [14. Dependency Injection](#14-dependency-injection)
 - [15. Versioning APIs](#15-versioning-apis)
 - [16. Code Quality and Code Reviews](#16-code-quality-and-code-reviews)
-- [17. Monitoring and Alerting](#15-versioning-apis)
+- [17. Java 17 Best Practices](#17-java-17-best-practices)
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
