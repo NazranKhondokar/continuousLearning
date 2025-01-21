@@ -883,6 +883,94 @@ Run your application and navigate to:
 ## **11. Caching**:
    - **Tip**: Optimize performance with caching strategies.
    - **Best Practice**: Integrate caching mechanisms, such as Spring’s caching annotations or third-party caching solutions, to reduce redundant computations and database calls.
+
+### **1. Gradle Dependency**
+
+```gradle
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'com.github.ben-manes.caffeine:caffeine'
+}
+```
+
+### **2. Enable Caching in the Application**
+
+```java
+package com.example.cache;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
+
+@SpringBootApplication
+@EnableCaching
+public class CacheApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(CacheApplication.class, args);
+    }
+}
+```
+
+### **3. Cache Configuration**
+
+```java
+package com.example.cache.config;
+
+import com.github.benmanes.caffeine.cache.Caffeine;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.caffeine.CaffeineCacheManager;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.concurrent.TimeUnit;
+
+@Configuration
+@EnableCaching
+public class CacheConfig {
+
+    @Bean
+    public Caffeine<Object, Object> caffeineConfig() {
+        return Caffeine.newBuilder()
+                .expireAfterWrite(10, TimeUnit.MINUTES)
+                .maximumSize(100);
+    }
+
+    @Bean
+    public CacheManager cacheManager(Caffeine<Object, Object> caffeine) {
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager();
+        cacheManager.setCaffeine(caffeine);
+        return cacheManager;
+    }
+}
+```
+
+### **4. Use Caching in a Service**
+
+```java
+package com.example.cache.service;
+
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductService {
+
+    @Cacheable(value = "products", key = "#productId")
+    public String getProductById(String productId) {
+        simulateSlowService();
+        return "Product details for ID: " + productId;
+    }
+
+    private void simulateSlowService() {
+        try {
+            Thread.sleep(3000); // Simulate a delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+```
 ---
 ## **12. Internationalization and Localization**:
    - **Tip**: Plan for multi-language support from the beginning.
