@@ -1,6 +1,6 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
-- **Reporting Period:** 13-01-2025 to 17-01-2025
+- **Reporting Period:** 13-01-2025 to 27-01-2025
 - **Report Date:** 27-01-2025 12:00 PM (BD Time)
 
 #### 1. Sprint Overview  
@@ -10,11 +10,12 @@
 #### 2. Task Completion Summary
 
 - **Total Tasks Completed (Done) (Bangladesh Team):** 15
-- **Total Tasks Under Review (Ukrain Team):** 11
+- **Total Tasks Under Review (Ukrain Team):** 3
 - **Total Tasks Pending (In Progress):** 1
 
 #### 3. Sprint Progress and Blockers
-- The development team covered todo 15 tasks, 1 in progress, and 3 tasks are under review but one task could not start because of `RevenueCat` proper configuration. One developer is stuck for 3 days.
+- The development team covered todo 15 tasks, 1 in progress, and 3 tasks are under review but one task could not start because of `RevenueCat` proper configuration. One developer is stuck for *5* days.
+- There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 - There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 
 #### 4. Jira Task Breakdown
@@ -33,7 +34,7 @@
 | MBC-36   | [FE] Profile settings menu, Personal info and Log Out        | 6H | Shoroardi Sumon   | Reviewed      |
 | MBC-40   | [FE] Change Password        | 6H | Shoroardi Sumon   | Reviewed      |
 | MBC-27   | [BE] Save subscription details        | 10H | Alhaj Uddin    | Done      |
-| MBC-60   | [FE] Fix the iOS app version         |  | Shoroardi Sumon   | Reviewed      |
+| MBC-60   | [FE] Fix the iOS app version         |  | Shoroardi Sumon   |       |
 | MBC-62   | [BE] Articles CRUD implementation    | 16H |  Nazran Khondokar     | Done      |
 | MBC-64   | [BE] Articles: Additional functionality    | 8H |  Nazran Khondokar     | Done      |
 | MBC-63   | [FE] Articles (News) list, article view    | 20H |   Shoroardi Sumon      | In Progress      |
