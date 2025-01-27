@@ -9,15 +9,15 @@
 
 #### 2. Task Completion Summary
 
-#### Bangladesh Team
-- **Total Tasks Completed (Done):** 15
-- **Total Tasks Pending (In Progress):** 1
-#### Ukrain Team
-- **Total Tasks Reviewed:** 11
-- **Total Tasks Under Review:** 3
+- **Bangladesh Team**
+  - **Total Tasks Completed (Done):** 15
+  - **Total Tasks Pending (In Progress):** 1
+- **Ukrain Team**
+  - **Total Tasks Reviewed:** 11
+  - **Total Tasks Under Review:** 3
 
 #### 3. Sprint Progress and Blockers
-- The development team covered todo 15 tasks, 1 in progress, and 3 tasks are under review but one task could not start because of `RevenueCat` proper configuration. One developer is stuck for *5* days.
+- The development team covered todo 15 tasks, 1 in progress, and 3 tasks are under review but one task could not start because of `RevenueCat` proper configuration. One developer is stuck for **5 days**.
 - `MBC-60` Analyzed the issue, later found to be a configuration issue and marked resolved.
 - There are some tasks in the backlog, still, we don't know when it will  be available in the `TODO` section to start work.
 
