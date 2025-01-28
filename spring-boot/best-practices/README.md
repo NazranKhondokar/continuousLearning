@@ -31,7 +31,7 @@ src
     │               ├── annotation      # Annotation classes
     │               ├── config          # Configuration classes
     │               ├── controller      # REST controllers
-    │               ├── service         # Service layer interfaces
+    │               └── service         # Service layer interfaces
     │                   └── impl        # Service layer implementations
     │               ├── repository      # JPA repositories
     │               ├── dto             # Data Transfer Objects (DTOs)
