@@ -28,15 +28,18 @@ src
     │   └── com
     │       └── example
     │           └── projectname
+    │               ├── annotation      # Annotation classes
     │               ├── config          # Configuration classes
     │               ├── controller      # REST controllers
-    │               ├── service         # Service layer interfaces and implementations
+    │               ├── service         # Service layer interfaces
+    │                   └── impl        # Service layer implementations
     │               ├── repository      # JPA repositories
     │               ├── dto             # Data Transfer Objects (DTOs)
     │               ├── entity          # JPA entities
     │               ├── exception       # Custom exception classes
     │               ├── mapper          # MapStruct mappers
     │               ├── security        # Security-related classes
+    │               ├── validation      # Validation classes
     │               └── util            # Utility classes
     ├── resources
     │   ├── static                      # Static files (e.g., HTML, CSS, JS)
