@@ -428,7 +428,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private static final String SECRET_KEY = "mysecretkey";
+    private static final String SECRET_KEY = "mysecretkey"; // Example secret key; in production, store securely in a vault or environment variable.
     private static final long EXPIRATION_TIME = 86400000; // 1 day
 
     public String generateToken(String username) {
