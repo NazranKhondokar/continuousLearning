@@ -1144,14 +1144,6 @@ public class GreetingController {
 ```
 
 - **Best Practice**: Use constructor injection for required dependencies, which ensures immutability and testability.
-
-### **Key Practices Demonstrated**
-1. **Loose Coupling**: Interface-based design decouples implementation details.
-2. **Inversion of Control**: Spring manages the instantiation and lifecycle of beans.
-3. **SOLID Principles**:
-   - **Single Responsibility**: Each class has one reason to change.
-   - **Dependency Inversion**: High-level modules depend on abstractions (`GreetingService`).
-4. **Constructor Injection**: Recommended for mandatory dependencies.
 ---
 ## **15. Versioning APIs**:
    - **Tip**: Plan for future changes in your API design.
@@ -1173,8 +1165,7 @@ src/main/java
     │   ├── UserControllerV1.java
     │   └── UserControllerV2.java
     ├── dto
-    │   ├── UserV1.java
-    │   └── UserV2.java
+    │   └── User.java
     ├── service
     │   ├── UserServiceV1.java
     │   └── UserServiceV2.java
@@ -1184,26 +1175,32 @@ src/main/java
 
 ##### DTOs
 
-###### `UserV1.java`
+###### `User.java`
 ```java
-public class UserV1 {
-    private String name;
-}
-```
-
-###### `UserV2.java`
-```java
-public class UserV2 {
+public class User {
     private String firstName;
     private String lastName;
+
+    // Constructor for version 1 (name only)
+    public User(String name) {
+        this.firstName = name;
+        this.lastName = "";
+    }
+
+    // Constructor for version 2 (first and last name)
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    // Getters and setters
 }
 ```
-
 ##### Controllers
 
 ###### `UserControllerV1.java`
 ```java
-import com.example.versioning.dto.UserV1;
+import com.example.versioning.dto.User;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -1211,14 +1208,14 @@ public class UserControllerV1 {
 
     @GetMapping
     public UserV1 getUser() {
-        return new UserV1("John Doe");
+        return new User("John Doe");
     }
 }
 ```
 
 ###### `UserControllerV2.java`
 ```java
-import com.example.versioning.dto.UserV2;
+import com.example.versioning.dto.User;
 
 @RestController
 @RequestMapping("/api/v2/users")
@@ -1226,7 +1223,7 @@ public class UserControllerV2 {
 
     @GetMapping
     public UserV2 getUser() {
-        return new UserV2("John", "Doe");
+        return new User("John", "Doe");
     }
 }
 ```
@@ -1236,7 +1233,7 @@ public class UserControllerV2 {
 **Version 1 Endpoint:**
 ```bash
 curl http://localhost:8080/api/v1/users
-# Response: {"name":"John Doe"}
+# Response: {"firstName":"John Doe","lastName":""}
 ```
 
 **Version 2 Endpoint:**
@@ -1245,7 +1242,7 @@ curl http://localhost:8080/api/v2/users
 # Response: {"firstName":"John","lastName":"Doe"}
 ```
 ---
-## **17. Java 17 Best Practices**:
+## **15. Java 17 Best Practices**:
 
 ### **Use Clear and Intuitive Naming Conventions**
 - **Classes**: Use nouns, e.g., `UserService`.
