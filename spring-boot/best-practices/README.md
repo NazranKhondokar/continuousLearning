@@ -238,25 +238,27 @@ public class GlobalExceptionHandler {
 }
 ```
 
-### **Update a Sample Controller**
+### **Update a Sample Service, Controller**
 ```java
-package com.example.controller;
+@Service
+public class SampleService {
 
-import com.example.exception.ResourceNotFoundException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class SampleController {
-
-    @GetMapping("/api/resource")
-    public String getResource(@RequestParam String id) {
+    public String getResourceById(String id) throws ResourceNotFoundException {
         if ("123".equals(id)) {
             return "Resource found!";
         } else {
             throw new ResourceNotFoundException("Resource with ID " + id + " not found.");
         }
+    }
+}
+```
+```java
+@RestController
+public class SampleController {
+
+    @GetMapping("/api/resource")
+    public String getResource(@RequestParam String id) {
+        return sampleService.getResourceById(id);
     }
 }
 ```
