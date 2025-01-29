@@ -864,6 +864,28 @@ Run your application and navigate to:
 ## **10. Transaction Management**:
    - **Tip**: Understand transaction boundaries and isolation levels.
    - **Best Practice**: Use Spring’s declarative transaction management for consistency. Be cautious with transaction boundaries and avoid long-running transactions.
+        - **Use declarative transaction management** with `@Transactional` annotation.
+        - **Set appropriate isolation levels** to control concurrency (e.g., `READ_COMMITTED`, `REPEATABLE_READ`).
+        - **Define transaction boundaries clearly**—keep transactions short and limit scope to prevent long-running transactions.
+        - **Avoid nested transactions** when possible and rely on Spring's automatic rollback on exceptions.
+### **Gradle Dependency**
+```groovy
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+}
+```
+### **Add @Transactional in service**
+```java
+@Service
+public class UserService {
+
+    @Transactional(isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
+    public void createUser(User user) {
+        // Business logic here
+    }
+}
+```
 ---
 ## **11. Caching**:
    - **Tip**: Optimize performance with caching strategies.
