@@ -150,8 +150,6 @@ package com.example.logging;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoggingExampleController {
@@ -202,16 +200,6 @@ public class ResourceNotFoundException extends RuntimeException {
 ### **Create a Global Exception Handler using `@ControllerAdvice`**
 ```java
 package com.example.exception;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.context.request.WebRequest;
-
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -275,7 +263,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     implementation 'com.h2database:h2' // For testing; use proper DB in production
 }
-
 ```
 
 ### **Application Properties (`application.yml`)**
@@ -298,12 +285,6 @@ spring:
 ### **Create the Entity (`User.java`)**
 
 ```java
-package com.example.demo.entity;
-
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "users", indexes = {
     @Index(name = "idx_email", columnList = "email", unique = true)
@@ -326,13 +307,6 @@ public class User {
 ### **Create the Repository (`UserRepository.java`)**
 
 ```java
-package com.example.demo.repository;
-
-import com.example.demo.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
-
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 }
@@ -340,19 +314,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
 ### **Create the Service (`UserService.java`)**
 
 ```java
-package com.example.demo.service;
-
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Service;
-
-import java.util.Optional;
-
 @Service
 public class UserService {
     private final UserRepository userRepository;
 
+   /**
+     * Caches the user data to improve performance. 
+     * While there are various caching strategies available, 
+     * we specifically use @Cacheable here to store the result 
+     * and avoid redundant database calls for the same email.
+     */
     @Cacheable("users")
     public Optional<User> findUserByEmail(String email) {
         return userRepository.findByEmail(email);
