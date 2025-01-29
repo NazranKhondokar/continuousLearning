@@ -583,6 +583,7 @@ class CalculatorControllerIT {
 package com.example.demo.controller;
 
 import com.example.demo.service.CalculatorService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -603,10 +604,15 @@ class CalculatorControllerE2ETest {
     @MockBean
     private CalculatorService calculatorService;
 
+    @BeforeEach
+    void setUp() {
+        // Set up common mock behavior here
+        when(calculatorService.add(3, 5)).thenReturn(8);
+        when(calculatorService.subtract(10, 4)).thenReturn(6);
+    }
+
     @Test
     void testAddEndpoint() throws Exception {
-        when(calculatorService.add(3, 5)).thenReturn(8);
-
         mockMvc.perform(get("/api/calculator/add")
                 .param("a", "3")
                 .param("b", "5"))
@@ -616,8 +622,6 @@ class CalculatorControllerE2ETest {
 
     @Test
     void testSubtractEndpoint() throws Exception {
-        when(calculatorService.subtract(10, 4)).thenReturn(6);
-
         mockMvc.perform(get("/api/calculator/subtract")
                 .param("a", "10")
                 .param("b", "4"))
