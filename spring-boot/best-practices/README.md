@@ -1209,7 +1209,7 @@ import com.example.versioning.dto.User;
 public class UserControllerV1 {
 
     @GetMapping
-    public UserV1 getUser() {
+    public User getUser() {
         return new User("John Doe");
     }
 }
@@ -1224,7 +1224,7 @@ import com.example.versioning.dto.User;
 public class UserControllerV2 {
 
     @GetMapping
-    public UserV2 getUser() {
+    public User getUser() {
         return new User("John", "Doe");
     }
 }
