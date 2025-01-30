@@ -12,7 +12,7 @@
 - [10. Transaction Management](#10-transaction-management)
 - [11. Caching](#11-caching)
 - [12. Internationalization and Localization](#12-internationalization-and-localization)
-- [13. Dependency Injection](#14-dependency-injection)
+- [13. Dependency Injection](#13-dependency-injection)
 - [14. Versioning APIs](#14-versioning-apis)
 - [15. Java 17 Code Standard](#15-java-17-code-standard)
 
