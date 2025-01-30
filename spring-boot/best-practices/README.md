@@ -13,8 +13,8 @@
 - [11. Caching](#11-caching)
 - [12. Internationalization and Localization](#12-internationalization-and-localization)
 - [13. Dependency Injection](#14-dependency-injection)
-- [14. Versioning APIs](#15-versioning-apis)
-- [15. Java 17 Best Practices](#17-java-17-best-practices)
+- [14. Versioning APIs](#14-versioning-apis)
+- [15. Java 17 Code Standard](#15-java-17-code-standard)
 
 ## **1. Project Structure and Modularization**:
    - **Tip**: Organize your project structure thoughtfully, following the principles of modularity.
@@ -1145,7 +1145,7 @@ public class GreetingController {
 
 - **Best Practice**: Use constructor injection for required dependencies, which ensures immutability and testability.
 ---
-## **15. Versioning APIs**:
+## **14. Versioning APIs**:
    - **Tip**: Plan for future changes in your API design.
    - **Best Practice**: Implement versioning strategies for APIs to ensure backward compatibility and smooth transitions when introducing changes.
 ### Key Best Practices for API Versioning:
@@ -1243,13 +1243,8 @@ curl http://localhost:8080/api/v2/users
 ```
 ---
 ## **15. Java 17 Code Standard**:
-Here’s a concise **Java 17 Code Standard** guide addressing database field types, mapping, coding smells, and best practices:  
 
----
-
-### **Java 17 Code Standard - Best Practices**
-
-#### **Database Field Types & Mapping (JPA Best Practices)**
+### **Database Field Types & Mapping (JPA Best Practices)**
 - Use proper data types matching business requirements.
 - Avoid `VARCHAR(MAX)`, prefer `VARCHAR(255)` unless large storage is needed.
 - Use `@Enumerated(EnumType.STRING)` instead of `@Enumerated(EnumType.ORDINAL)` for Enums.
@@ -1270,7 +1265,7 @@ public class User {
 }
 ```
 
-#### **Avoid Hardcoded Values (Use Constants & Config)**
+### **Avoid Hardcoded Values (Use Constants & Config)**
 - Use constants or properties instead of hardcoded values.
 
 ```java
@@ -1284,7 +1279,7 @@ public class AppConfig {
 private String baseUrl;
 ```
 
-#### **Avoid Coding Smells**
+### **Avoid Coding Smells**
 - **Long Methods →** Break into smaller methods.
 - **Feature Envy →** Move logic closer to the related class.
 - **Magic Numbers →** Use named constants.
@@ -1299,7 +1294,7 @@ public void processRequest() {
 }
 ```
 
-#### **Unused Imports (Optimize Imports)**
+### **Unused Imports (Optimize Imports)**
 - Remove unnecessary imports.
 
 Before:
@@ -1318,14 +1313,14 @@ import java.util.ArrayList;
 `Ctrl + Alt + O` (Windows/Linux) or `Cmd + Option + O` (Mac)  
 
 
-#### **Use Records for DTOs (Java 17)**
+### **Use Records for DTOs (Java 17)**
 - Instead of traditional DTOs, use **Java Records** for immutable objects.
 
 ```java
 public record UserDTO(Long id, String name, Role role) {}
 ```
 
-#### **Use Optional Instead of Null Checks**
+### **Use Optional Instead of Null Checks**
 - Avoid `null` checks with `Optional`.
 
 ```java
@@ -1333,7 +1328,7 @@ public Optional<User> findUserById(Long id) {
     return userRepository.findById(id);
 }
 ```
-#### **Use Clear and Intuitive Naming Conventions**
+### **Use Clear and Intuitive Naming Conventions**
 - **Classes**: Use nouns, e.g., `UserService`.
 - **Packages**: Use lowercase, e.g., `com.example.service`.
 - **Interfaces**: Use CamelCase, e.g., `UserRepository`.
@@ -1341,7 +1336,7 @@ public Optional<User> findUserById(Long id) {
 - **Methods**: Use verbs, e.g., `calculateSum()`.
 
 
-#### **Comment and Write Self-Documenting Code**
+### **Comment and Write Self-Documenting Code**
 - **Comment Example**:  
   ```java
   // Check if user is active
@@ -1354,7 +1349,7 @@ public Optional<User> findUserById(Long id) {
   ```
 
 
-#### **Write Descriptive Commit Messages**
+### **Write Descriptive Commit Messages**
 - Example:  
   ```bash
   git commit -m "Fix NullPointerException in user registration"
@@ -1362,7 +1357,7 @@ public Optional<User> findUserById(Long id) {
 - Keep messages brief and focus on **what changed**.
 
 
-#### **Avoid Empty Catch Blocks**
+### **Avoid Empty Catch Blocks**
 - **Bad**:  
   ```java
   try {
@@ -1381,8 +1376,7 @@ public Optional<User> findUserById(Long id) {
   }
   ```
 
-
-#### **Handle NullPointerException Properly**
+### **Handle NullPointerException Properly**
 - **Bad**:  
   ```java
   int count = company.getEmployees().size();
@@ -1396,14 +1390,14 @@ public Optional<User> findUserById(Long id) {
   ```
 
 
-#### **Use Java Libraries Wisely**
+### **Use Java Libraries Wisely**
 - Avoid overusing libraries; choose reliable ones.
 - Example: Prefer `java.util.stream` over adding new dependencies:
   ```java
   var sum = numbers.stream().mapToInt(Integer::intValue).sum();
   ```
 
-#### **Access Class Members Privately**
+### **Access Class Members Privately**
 - **Bad**:  
   ```java
   public String name;
@@ -1420,8 +1414,7 @@ public Optional<User> findUserById(Long id) {
   }
   ```
 
-
-#### **Avoid Redundant Initializations**
+### **Avoid Redundant Initializations**
 - **Bad**:  
   ```java
   private boolean active = false; // Default is already false
@@ -1431,8 +1424,7 @@ public Optional<User> findUserById(Long id) {
   private boolean active;
   ```
 
-
-#### **Prevent Memory Leaks**
+### **Prevent Memory Leaks**
 - Always release resources:
   ```java
   try (var connection = dataSource.getConnection()) {
