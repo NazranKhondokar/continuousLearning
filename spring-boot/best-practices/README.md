@@ -1242,9 +1242,98 @@ curl http://localhost:8080/api/v2/users
 # Response: {"firstName":"John","lastName":"Doe"}
 ```
 ---
-## **15. Java 17 Best Practices**:
+## **15. Java 17 Code Standard**:
+Here’s a concise **Java 17 Code Standard** guide addressing database field types, mapping, coding smells, and best practices:  
 
-### **Use Clear and Intuitive Naming Conventions**
+---
+
+### **Java 17 Code Standard - Best Practices**
+
+#### **Database Field Types & Mapping (JPA Best Practices)**
+- Use proper data types matching business requirements.
+- Avoid `VARCHAR(MAX)`, prefer `VARCHAR(255)` unless large storage is needed.
+- Use `@Enumerated(EnumType.STRING)` instead of `@Enumerated(EnumType.ORDINAL)` for Enums.
+- Use `@Column(nullable = false)` for mandatory fields.
+
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(length = 100, nullable = false)
+    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+}
+```
+
+#### **Avoid Hardcoded Values (Use Constants & Config)**
+- Use constants or properties instead of hardcoded values.
+
+```java
+public class AppConfig {
+    public static final String BASE_URL = "https://api.example.com";
+}
+```
+
+```java
+@Value("${app.base-url}")
+private String baseUrl;
+```
+
+#### **Avoid Coding Smells**
+- **Long Methods →** Break into smaller methods.
+- **Feature Envy →** Move logic closer to the related class.
+- **Magic Numbers →** Use named constants.
+
+```java
+public static final int MAX_RETRIES = 3;
+
+public void processRequest() {
+    for (int i = 0; i < MAX_RETRIES; i++) {
+        // retry logic
+    }
+}
+```
+
+#### **Unused Imports (Optimize Imports)**
+- Remove unnecessary imports.
+
+Before:
+```java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random; // Unused
+```
+After:
+```java
+import java.util.List;
+import java.util.ArrayList;
+```
+
+**Use IntelliJ IDEA/VS Code shortcut:**  
+`Ctrl + Alt + O` (Windows/Linux) or `Cmd + Option + O` (Mac)  
+
+
+#### **Use Records for DTOs (Java 17)**
+- Instead of traditional DTOs, use **Java Records** for immutable objects.
+
+```java
+public record UserDTO(Long id, String name, Role role) {}
+```
+
+#### **Use Optional Instead of Null Checks**
+- Avoid `null` checks with `Optional`.
+
+```java
+public Optional<User> findUserById(Long id) {
+    return userRepository.findById(id);
+}
+```
+#### **Use Clear and Intuitive Naming Conventions**
 - **Classes**: Use nouns, e.g., `UserService`.
 - **Packages**: Use lowercase, e.g., `com.example.service`.
 - **Interfaces**: Use CamelCase, e.g., `UserRepository`.
@@ -1252,7 +1341,7 @@ curl http://localhost:8080/api/v2/users
 - **Methods**: Use verbs, e.g., `calculateSum()`.
 
 
-### **Comment and Write Self-Documenting Code**
+#### **Comment and Write Self-Documenting Code**
 - **Comment Example**:  
   ```java
   // Check if user is active
@@ -1265,7 +1354,7 @@ curl http://localhost:8080/api/v2/users
   ```
 
 
-### **Write Descriptive Commit Messages**
+#### **Write Descriptive Commit Messages**
 - Example:  
   ```bash
   git commit -m "Fix NullPointerException in user registration"
@@ -1273,7 +1362,7 @@ curl http://localhost:8080/api/v2/users
 - Keep messages brief and focus on **what changed**.
 
 
-### **Avoid Empty Catch Blocks**
+#### **Avoid Empty Catch Blocks**
 - **Bad**:  
   ```java
   try {
@@ -1284,35 +1373,37 @@ curl http://localhost:8080/api/v2/users
   ```
 - **Good**:  
   ```java
+  int result;
   try {
       int result = Integer.parseInt("abc");
   } catch (NumberFormatException e) {
-      System.err.println("Invalid number format: " + e.getMessage());
+      logger.error("Invalid number format: " + e.getMessage());
   }
   ```
 
 
-### **Handle NullPointerException Properly**
+#### **Handle NullPointerException Properly**
 - **Bad**:  
   ```java
   int count = company.getEmployees().size();
   ```
 - **Good**:  
   ```java
+  int count;
   if (company != null && company.getEmployees() != null) {
-      int count = company.getEmployees().size();
+      count = company.getEmployees().size();
   }
   ```
 
 
-### **Use Java Libraries Wisely**
+#### **Use Java Libraries Wisely**
 - Avoid overusing libraries; choose reliable ones.
 - Example: Prefer `java.util.stream` over adding new dependencies:
   ```java
   var sum = numbers.stream().mapToInt(Integer::intValue).sum();
   ```
 
-### **Access Class Members Privately**
+#### **Access Class Members Privately**
 - **Bad**:  
   ```java
   public String name;
@@ -1330,7 +1421,7 @@ curl http://localhost:8080/api/v2/users
   ```
 
 
-### **Avoid Redundant Initializations**
+#### **Avoid Redundant Initializations**
 - **Bad**:  
   ```java
   private boolean active = false; // Default is already false
@@ -1341,7 +1432,7 @@ curl http://localhost:8080/api/v2/users
   ```
 
 
-### **Prevent Memory Leaks**
+#### **Prevent Memory Leaks**
 - Always release resources:
   ```java
   try (var connection = dataSource.getConnection()) {
