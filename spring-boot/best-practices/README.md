@@ -203,7 +203,8 @@ package com.example.exception;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
+    public ResponseEntity<Map<String, Object>> handleResourceNotFoundException(ResourceNotFoundException ex,
+WebRequest request) {
         Map<String, Object> response = new HashMap<>();
         response.put("timestamp", LocalDateTime.now());
         response.put("message", ex.getMessage());
@@ -426,7 +427,8 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private static final String SECRET_KEY = "mysecretkey"; // Example secret key; in production, store securely in a vault or environment variable.
+    // Example secret key; in production, store securely in a vault or environment variable.
+    private static final String SECRET_KEY = "mysecretkey";
     private static final long EXPIRATION_TIME = 86400000; // 1 day
 
     public String generateToken(String username) {
@@ -748,7 +750,7 @@ Run the application and visit the Actuator endpoints:
 ### Add Dependencies in `build.gradle`
 ```groovy
 dependencies {
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // Adjust version as necessary
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 }
 ```
 
@@ -773,7 +775,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("My Spring Boot API")
-                        .description("This is the API documentation for my Spring Boot application.")
+                        .description("This is the API documentation.")
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("Nazran Khondokar")
