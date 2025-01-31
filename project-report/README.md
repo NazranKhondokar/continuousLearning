@@ -30,7 +30,7 @@
 | MBC-64   | [Sprint 3][BE] Articles: Additional functionality    | 8H |  Nazran Khondokar     | Done      |
 | MBC-63   | [Sprint 3][FE] Articles (News) list, article view    | 20H |   Shoroardi Sumon      | Reviewed      |
 | MBC-19   | [Sprint 3][FE] Plan selection: Pro annual/ Pro monthly (Onboarding)    | 24H |   Abu Bakar      | In Progress      |
-| MBC-67   | [FE] Articles - new changes    | 20H |   Shoroardi Sumon      | In Progress      |
+| MBC-67   | [FE] Articles - new changes    | 16H |   Shoroardi Sumon      | In Progress      |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
