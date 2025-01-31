@@ -19,7 +19,7 @@
 #### 3. Sprint Progress and Blockers
 - 4 tasks are under review from `Sprint 3`. Two backend developers had no task for **3 days** in this week. Other days they worked on review comments.
 - Finally today we got two tasks for the backend.
-- `MBC-19`: 
+- `MBC-19`: We are integrating the RevenueCat API. Initially, we received API keys on 27th January 2025, but they didn't work. On 28th January 2025, we received updated keys, but encountered configuration errors in the dashboard. After fixing the errors, we successfully obtained the correct, working API information on 29th January 2025, and the task is still in progress.
 
 #### 4. Jira Task Breakdown
 
