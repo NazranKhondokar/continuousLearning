@@ -11,7 +11,7 @@
 
 - **Bangladesh Team**
   - **Total Tasks Completed (Done):** 0
-  - **Total Tasks Pending (In Progress):** 3
+  - **Total Tasks Pending (In Progress):** 2
 - **Ukrain Team**
   - **Total Tasks Reviewed:** 3
   - **Total Tasks Under Review:** 1
