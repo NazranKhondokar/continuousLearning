@@ -10,16 +10,17 @@
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 1
+  - **Total Tasks Completed (Done):** 6
   - **Total Tasks Pending (In Progress):** 2
 - **Ukrain Team**
   - **Total Tasks Reviewed:** 3
-  - **Total Tasks Under Review:** 1
+  - **Total Tasks Under Review:** 4
 
 #### 3. Sprint Progress and Blockers
 - We got only a total of 28H backend tasks this week. One backend developer had no task this week for **3 days**, the other for **1 day**. The rest of the days they worked on review comments.
+- Finally, we got a backend task at 6 PM.
 - `MBC-74`: Pagination is not mentioned in the task description but was commented on in the pull request.
-- `MBC-19`: We are integrating the RevenueCat API. Initially, we received API keys on 27th January 2025, but they didn't work. On 28th January 2025, we received updated keys but encountered configuration errors in the dashboard. After fixing the errors, we successfully obtained the correct, working API information on 29th January 2025, and the task is still in progress.
+- `MBC-19`: Updated RevenueCat implementation after resolving internal test issues. Got the internal test APK today, tested it, and updated the code. Now doing thorough testing on iOS and Android to finalize the task.
 
 #### 4. Jira Task Breakdown
 
@@ -30,16 +31,17 @@
 | MBC-64   | [Sprint 3][BE] Articles: Additional functionality    | 8H |  Nazran Khondokar     | Reviewed      |
 | MBC-63   | [Sprint 3][FE] Articles (News) list, article view    | 20H |   Shoroardi Sumon      | Reviewed      |
 | MBC-19   | [Sprint 3][FE] Plan selection: Pro annual/ Pro monthly (Onboarding)    | 24H |   Abu Bakar      | In Progress      |
-| MBC-67   | [FE] Articles - new changes    | 16H |   Shoroardi Sumon      | done      |
+| MBC-67   | [FE] Articles - new changes    | 16H |   Shoroardi Sumon      | Done      |
 | MBC-74   | [BE] Categories CRUD    | 4H |    Alhaj Uddin      | Done      |
-| MBC-85   | [BE] Fix Revenue Cat API Version Key Verification Issue    |  |    Alhaj Uddin      | Done      |
-| MBC-78   | [Android] The error appears, after clicking on the "Google" button on the "Sign Up" page    |  |    Shoroardi Sumon      | Done      |
+| MBC-85   | [BE] Fix Revenue Cat API Version Key Verification Issue    |  |    Alhaj Uddin      | Reviewed      |
+| MBC-78   | [Android] The error appears, after clicking on the "Google" button on the "Sign Up" page    |  |    Shoroardi Sumon      | Reviewed      |
 | MBC-71   | [BE] Changes in Codebase and code optimization    | 20H |    Nazran Khondokar      | Done      |
 | MBC-88   | [BE] Fix Categories Query for Articles    |  |    Nazran Khondokar      | Done      |
+| MBC-76   | [FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon      | Done      |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
+     - MBC-47: [BE] Database Schema & Migrations for Course Management
      - MBC-66: [FE] Onboarding + User settings: Add laser eyes avatars, change the switcher name
-     - MBC-74: [BE] Categories CRUD
-     - MBC-71: [BE] Changes in Codebase and code optimization
+     - MBC-87: [Onboarding section] Change the placement of the Subscription screen
 - **Dependencies:** 
