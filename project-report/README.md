@@ -17,8 +17,8 @@
   - **Total Tasks Under Review:** 1
 
 #### 3. Sprint Progress and Blockers
-- 4 tasks are under review from `Sprint 3`. Two backend developers had no task this week for **3 days**. Other days they worked on review comments.
-- `MBC-74`: There is no mention of pagination in the task description, but it was commented on in the pull request.
+- We got only a total of 28H backend tasks this week. One backend developer had no task this week for **3 days**, the other for **1 day**. The rest of the days they worked on review comments.
+- `MBC-74`: Pagination is not mentioned in the task description but was commented on in the pull request.
 - `MBC-19`: We are integrating the RevenueCat API. Initially, we received API keys on 27th January 2025, but they didn't work. On 28th January 2025, we received updated keys but encountered configuration errors in the dashboard. After fixing the errors, we successfully obtained the correct, working API information on 29th January 2025, and the task is still in progress.
 
 #### 4. Jira Task Breakdown
