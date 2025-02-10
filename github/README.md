@@ -25,6 +25,46 @@ Contents:
 git remote set-url origin https://NazranKhondokar:<token>@github.com/NazranKhondokar/nazrankhondokar.github.io.git
 ```
 
+## Generating a new GPG key
+```bash
+ssh-keygen -t ed25519 -C "nazran91@gmail.com"
+```
+```bash
+cd ~/.ssh
+```
+```bash
+eval "$(ssh-agent -s)"
+```
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+**Find Your GPG Key ID**:  
+   Run this command to list your GPG keys:
+   ```
+   gpg --list-secret-keys --keyid-format=long
+   ```
+   Look for the **sec** line and note the long key ID (e.g., `ABCD1234EFGH5678`).
+
+**Set the GPG Key in Git**:
+   ```
+   git config --global user.signingkey ABCD1234EFGH5678
+   ```
+
+**Enable Commit Signing**:
+   ```
+   git config --global commit.gpgsign true
+   ```
+
+### Verify Your Configuration:
+To check if the signing key is set:
+```
+git config --global --get user.signingkey
+```
+
 ## Author
 
 - [Nazran Khondokar][author]
