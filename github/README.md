@@ -1,6 +1,3 @@
-Contents:
-- [To create a folder in a GitHub repository](#To-create-a-folder-in-a-GitHub-repository)
-
 ## To create a folder in a GitHub repository
 
 - Navigate to Your Repository:
@@ -26,6 +23,10 @@ git remote set-url origin https://NazranKhondokar:<token>@github.com/NazranKhond
 ```
 
 ## Generating a new GPG key
+
+  Follow those links for detail:
+  - https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+  - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 ```bash
 ssh-keygen -t ed25519 -C "nazran91@gmail.com"
 ```
@@ -42,19 +43,20 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
 
-**Find Your GPG Key ID**:  
-   Run this command to list your GPG keys:
+### **Find Your GPG Key ID**:
+
+Run this command to list your GPG keys:
    ```
    gpg --list-secret-keys --keyid-format=long
    ```
-   Look for the **sec** line and note the long key ID (e.g., `ABCD1234EFGH5678`).
+Look for the **sec** line and note the long key ID (e.g., `ABCD1234EFGH5678`).
 
-**Set the GPG Key in Git**:
+### **Set the GPG Key in Git**:
    ```
    git config --global user.signingkey ABCD1234EFGH5678
    ```
 
-**Enable Commit Signing**:
+### **Enable Commit Signing**:
    ```
    git config --global commit.gpgsign true
    ```
