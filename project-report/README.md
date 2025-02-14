@@ -5,19 +5,19 @@
 
 #### 1. Sprint Overview  
 - **Sprint Name:** Sprint 4, 5
-- **Sprint Duration:** 29-01-2025 to 11-02-2025[Sprint 4], 12-02-2025 to 26-02-2025[Sprint 5], 
+- **Sprint Duration:** 29-01-2025 to 11-02-2025 [Sprint 4], 12-02-2025 to 26-02-2025 [Sprint 5], 
 
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
   - **Total Tasks Completed (Done):** 18
-  - **Total Tasks Pending (In Progress):** 0
+  - **Total Tasks Pending (In Progress):** 1
 - **Ukrain Team**
   - **Total Tasks Reviewed:** 16
   - **Total Tasks Under Review:** 6
 
 #### 3. Sprint Progress and Blockers
-- 
+- `MBC-76` There is an issue of apple-sign-in. The backend requires some changes. We provided two types of solutions in `Slack` on 7 February and also in meetings. Also, we reminded it in next day. They said they would provide a decision but still, we did not get any decision.
 
 #### 4. Jira Task Breakdown
 
@@ -27,11 +27,11 @@
 | MBC-74   | [Sprint 4][BE] Categories CRUD    | 4H |    Alhaj Uddin      | Reviewed      |
 | MBC-71   | [Sprint 4][BE] Changes in Codebase and code optimization    | 20H |    Nazran Khondokar      | Reviewed      |
 | MBC-88   | [Sprint 4][BE] Fix Categories Query for Articles    |  |    Nazran Khondokar      | Reviewed      |
-| MBC-76   | [FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon      | Reviewed      |
+| MBC-76   | [Sprint 4][FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon      | Reviewed      |
 | MBC-47   | [BE] Database Schema & Migrations for Course Management   | 4H |   Alhaj Uddin      | Reviewed      |
 | MBC-79   |  [IOS]The app crashes, after clicking on the "Google" button on the "Sign Up" page    |  |    Shoroardi Sumon       | Reviewed      |
-| MBC-87   |  Onboarding section - Change the placement of the Subscription screen    |  |    Abu Bakar       | Reviewed      |
-| MBC-66   |  Onboarding + User settings: Add laser eyes avatars, change the switcher name    |  |    Abu Bakar       | Reviewed      |
+| MBC-87   |  Onboarding section - Change the placement of the Subscription screen    | 6H |    Abu Bakar       | Reviewed      |
+| MBC-66   |  Onboarding + User settings: Add laser eyes avatars, change the switcher name    | 4H |    Abu Bakar       | Reviewed      |
 | MBC-76   |  The "Apple" button on the "Sign Up" page doesn't work    |  |    Shoroardi Sumon       | Reviewed      |
 | MBC-79   |   [IOS]The app crashes, after clicking on the "Google" button on the "Sign Up"    |  |    Shoroardi Sumon       | Reviewed      |
 | MBC-82   |   The application should only support vertical orientation    |  |    Shoroardi Sumon       | Reviewed      |
@@ -45,6 +45,7 @@
 | MBC-96   | Remove .env, service-account.json Files from Repository + additional fixes    |  |Nazran Khondokar| Done      |
 | MBC-97   | [BE] Fix the case when after each login, the user is forced to complete the onboarding process.    |  |    Alhaj Uddin      | Done      |
 | MBC-49   | [[BE] Create/Update/Delete Courses    | 24H |    Nazran Khondokar      | Done      |
+| MBC-90   | [FE] After each login, the user is forced to complete the onboarding process.   |  |   Abu Bakar      | In progress      |
 
 
 #### 5. Next Steps & Upcoming Tasks
