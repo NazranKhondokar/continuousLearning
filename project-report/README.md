@@ -10,11 +10,11 @@
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 7
-  - **Total Tasks Pending (In Progress):** 1
+  - **Total Tasks Completed (Done):** 18
+  - **Total Tasks Pending (In Progress):** 0
 - **Ukrain Team**
-  - **Total Tasks Reviewed:** 3
-  - **Total Tasks Under Review:** 4
+  - **Total Tasks Reviewed:** 16
+  - **Total Tasks Under Review:** 6
 
 #### 3. Sprint Progress and Blockers
 - 
@@ -24,9 +24,9 @@
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
 | MBC-19   | [Sprint 4][FE] Plan selection: Pro annual/ Pro monthly (Onboarding)    | 24H |   Abu Bakar      | Reviewed      |
-| MBC-74   | [BE] Categories CRUD    | 4H |    Alhaj Uddin      | Reviewed      |
-| MBC-71   | [BE] Changes in Codebase and code optimization    | 20H |    Nazran Khondokar      | Reviewed      |
-| MBC-88   | [BE] Fix Categories Query for Articles    |  |    Nazran Khondokar      | Reviewed      |
+| MBC-74   | [Sprint 4][BE] Categories CRUD    | 4H |    Alhaj Uddin      | Reviewed      |
+| MBC-71   | [Sprint 4][BE] Changes in Codebase and code optimization    | 20H |    Nazran Khondokar      | Reviewed      |
+| MBC-88   | [Sprint 4][BE] Fix Categories Query for Articles    |  |    Nazran Khondokar      | Reviewed      |
 | MBC-76   | [FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon      | Reviewed      |
 | MBC-47   | [BE] Database Schema & Migrations for Course Management   | 4H |   Alhaj Uddin      | Reviewed      |
 | MBC-79   |  [IOS]The app crashes, after clicking on the "Google" button on the "Sign Up" page    |  |    Shoroardi Sumon       | Reviewed      |
