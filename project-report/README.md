@@ -39,7 +39,14 @@
 | MBC-75   |   [FE] Change API endpoints    |  |    Shoroardi Sumon       | Reviewed      |
 | MBC-91   | If the application is closed and reopened, the user is again asked to complete the onboarding process.   |  |   Abu Bakar      | Reviewed      |
 | MBC-95   | Fix RevenueCat Logout Issue After App Restart   |  |   Abu Bakar      | Reviewed      |
+| MBC-81   | Refactor Privacy URL Handling and Use App Constants  |  |   Abu Bakar      | Done      |
+| MBC-93   |   The "Bitcoin Price" section on the "Select Theme" page does not match the design    |  |    Shoroardi Sumon       | Done      |
+| MBC-49   | [BE] CRUD CoursesCategories    | 5H |    Alhaj Uddin      | Done      |
+| MBC-96   | Remove .env, service-account.json Files from Repository + additional fixes    |  |Nazran Khondokar| Done      |
+| MBC-97   | [BE] Fix the case when after each login, the user is forced to complete the onboarding process.    |  |    Alhaj Uddin      | Done      |
+| MBC-49   | [[BE] Create/Update/Delete Courses    | 24H |    Nazran Khondokar      | Done      |
+
+
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
-     - 
 - **Dependencies:** 
