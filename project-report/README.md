@@ -5,7 +5,7 @@
 
 #### 1. Sprint Overview  
 - **Sprint Name:** Sprint 5
-- **Sprint Duration:** 12-02-2025 to 26-02-2025 [Sprint 5], 
+- **Sprint Duration:** 12-02-2025 to 26-02-2025
 
 #### 2. Task Completion Summary
 
@@ -17,7 +17,7 @@
   - **Total Tasks Under Review:** 5
 
 #### 3. Sprint Progress and Blockers
-- We asked for an [approach](https://devsx.slack.com/archives/C07SP1ZQYC8/p1739862621219239) in `Slack` and then mentioned the team lead. But he didn't read it and couldn't recognize the issue properly in meetings. We assume this is a lack of mobile lifecycle knowledge.
+- We asked for an [approach](https://devsx.slack.com/archives/C07SP1ZQYC8/p1739862621219239) in `Slack` and then mentioned the team lead. But he didn't read it and couldn't recognize the issue properly after described again in meetings. We assume this is a lack of mobile lifecycle knowledge.
 
 #### 4. Jira Task Breakdown
 
@@ -42,4 +42,6 @@
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
+  - MBC-112 [FE] Every time the app is restarted, "Coinbase" is selected on the "Preferred Exchange" page.
+  - MBC-76 [FE] The "Apple" button on the "Sign Up" page doesn't work
 - **Dependencies:** 
