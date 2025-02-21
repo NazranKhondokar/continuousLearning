@@ -1,25 +1,18 @@
 
 # **Project Proposal: Clinic Management System**
 
----
-
 ## **1. Executive Summary**
 This proposal outlines the development of a comprehensive **Clinic Management System** for your startup clinic. The system will include:
 - A **client-facing website** to showcase your clinic’s services and attract patients.
 - A **management web application** for doctors, patients, and administrators to handle appointments, prescriptions, billing, inventory, and more.
 - **Mobile apps** for doctors and patients to manage appointments, prescriptions, and telemedicine services.
 
-The project will be developed using **Spring Boot** (backend), **React** (frontend), **Flutter** (mobile apps), and **MySQL** (database). The system will be deployed on **Render** and published on the **Play Store**.
-
----
 
 ## **2. Objectives**
 The core objectives of the project are:
-1. **Client Website**: Develop an eye-catching website aligned with the clinic’s business and target audience.
-2. **Management Web Apps**: Build a robust system for managing doctors, patients, appointments, prescriptions, billing, inventory, laboratory, and telemedicine services.
-3. **Mobile Apps**: Develop mobile apps for doctors and patients to manage appointments, prescriptions, and telemedicine services.
-
----
+- **Client Website**: Develop an eye-catching website aligned with the clinic’s business and target audience.
+- **Management Web Apps**: Build a robust system for managing doctors, patients, appointments, prescriptions, billing, inventory, laboratory, and telemedicine services.
+- **Mobile Apps**: Develop mobile apps for doctors and patients to manage appointments, prescriptions, and telemedicine services.
 
 ## **3. Scope of Work**
 The project will be divided into the following components:
@@ -74,7 +67,6 @@ The project will be divided into the following components:
 - Deployment on Render
 - Publishing on Play Store
 
----
 
 ## **4. Technology Stack**
 - **Backend**: Spring Boot
@@ -84,7 +76,6 @@ The project will be divided into the following components:
 - **Deployment**: Render
 - **Publishing**: Play Store
 
----
 
 ## **5. Timeline**
 The project will be completed in **3 months** with the following milestones:
@@ -99,7 +90,6 @@ The project will be completed in **3 months** with the following milestones:
 | Integration and Testing  | 2 Weeks      | Integrated system with testing               |
 | Deployment and Publishing| 1 Week       | Deployment on Render and Play Store          |
 
----
 
 ## **6. Team Structure**
 We propose hiring **3 developers** with expertise in:
@@ -110,7 +100,6 @@ We propose hiring **3 developers** with expertise in:
 
 Additionally, a **project manager** will oversee the project to ensure timely delivery.
 
----
 
 ## **7. Cost Estimate - 3 months**
 The total cost of the project is estimated as follows:
@@ -122,31 +111,13 @@ The total cost of the project is estimated as follows:
 | Miscellaneous (Tools, Testing, etc.) | 20,000       |
 | **Total**               | **3,80,000**      |
 
----
 
-## **8. Risks and Mitigation**
-| **Risk**                     | **Mitigation Strategy**                          |
-|------------------------------|--------------------------------------------------|
-| Delays in development        | Regular progress tracking and agile methodology  |
-| Integration challenges       | Early API design and testing                    |
-| Budget overruns              | Strict budget monitoring                        |
-| Quality issues               | Rigorous testing and code reviews               |
-
----
-
-## **9. Deliverables**
+## **8. Deliverables**
 1. Fully functional **client website**.
 2. **Management web apps** for admin, doctors, and patients.
 3. **Mobile apps** for doctors and patients.
 4. **Deployed system** on Render and Play Store.
 5. Complete documentation and user manuals.
-
----
-
-## **10. Conclusion**
-This project will provide your clinic with a modern, efficient, and scalable management system to streamline operations and enhance patient experience. With a dedicated team and a clear timeline, we are confident in delivering a high-quality solution within the proposed budget and timeframe.
-
----
 
 **Prepared by**: Nazran Khondokar 
 **Date**: 21/02/2025  
