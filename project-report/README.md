@@ -11,13 +11,13 @@
 
 - **Bangladesh Team**
   - **Total Tasks Completed (Done):** 13
-  - **Total Tasks Pending (In Progress):** 0
+  - **Total Tasks Pending (In Progress):** 1
 - **Ukrain Team**
   - **Total Tasks Reviewed:** 14
   - **Total Tasks Under Review:** 5
 
 #### 3. Sprint Progress and Blockers
-
+- We asked for an [approach](https://devsx.slack.com/archives/C07SP1ZQYC8/p1739862621219239) in `Slack` and then mentioned the team lead. But he didn't read it and couldn't recognize the issue properly in meetings. We assume this is a lack of mobile lifecycle knowledge.
 
 #### 4. Jira Task Breakdown
 
@@ -38,7 +38,7 @@
 | MBC-102   | [BE] Subscription: Database Schema Changes   |  |    Alhaj Uddin      | Reviewed      |
 | MBC-108   | [BE] Subscription: API Endpoints - Modify the Current User Endpoint  | 2H |   Alhaj Uddin      | Reviewed      |
 | MBC-50   | [BE] GetAll/GetBy Courses  | 24H |   Nazran Khondokar      | Done      |
-
+| MBC-117   | [FE] [IOS] When the app is opened, the "Welcome" page appears twice.    |  |   Abu Bakar      | In Progress      |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
