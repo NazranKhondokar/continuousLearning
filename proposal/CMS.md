@@ -2,17 +2,17 @@
 # **Project Proposal: Clinic Management System**
 
 ## **1. Executive Summary**
-This proposal outlines the development of a comprehensive **Clinic Management System** for your startup clinic. The system will include:
-- A **client-facing website** to showcase your clinic’s services and attract patients.
-- A **management web application** for doctors, patients, and administrators to handle appointments, prescriptions, billing, inventory, and more.
-- **Mobile apps** for doctors and patients to manage appointments, prescriptions, and telemedicine services.
+This proposal outlines the development of a comprehensive **Clinic Management System** for your startup clinic. The system will include
+  - A **client-facing website** to showcase your clinic’s services and attract patients.
+  - A **management web application** for doctors, patients, and administrators to handle appointments, prescriptions, billing, inventory, and more.
+  - **Mobile apps** for doctors and patients to manage appointments, prescriptions, and telemedicine services.
 
 
 ## **2. Objectives**
-The core objectives of the project are:
-- **Client Website**: Develop an eye-catching website aligned with the clinic’s business and target audience.
-- **Management Web Apps**: Build a robust system for managing doctors, patients, appointments, prescriptions, billing, inventory, laboratory, and telemedicine services.
-- **Mobile Apps**: Develop mobile apps for doctors and patients to manage appointments, prescriptions, and telemedicine services.
+The core objectives of the project are
+  - **Client Website**: Develop an eye-catching website aligned with the clinic’s business and target audience.
+  - **Management Web Apps**: Build a robust system for managing doctors, patients, appointments, prescriptions, billing, inventory, laboratory, and telemedicine services.
+  - **Mobile Apps**: Develop mobile apps for doctors and patients to manage appointments, prescriptions, and telemedicine services.
 
 ## **3. Scope of Work**
 The project will be divided into the following components:
@@ -92,11 +92,11 @@ The project will be completed in **3 months** with the following milestones:
 
 
 ## **6. Team Structure**
-We propose hiring **3 developers** with expertise in:
-- **Spring Boot** (Backend)
-- **React** (Frontend)
-- **Flutter** (Mobile Apps)
-- **MySQL** (Database)
+We propose hiring **3 developers** with expertise in
+  - **Spring Boot** (Backend)
+  - **React** (Frontend)
+  - **Flutter** (Mobile Apps)
+  - **MySQL** (Database)
 
 Additionally, a **project manager** will oversee the project to ensure timely delivery.
 
