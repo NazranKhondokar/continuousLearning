@@ -11,7 +11,7 @@
 
 - **Bangladesh Team**
   - **Total Tasks Completed (Done):** 13
-  - **Total Tasks Pending (In Progress):** 1
+  - **Total Tasks Pending (In Progress):** 2
 - **Ukrain Team**
   - **Total Tasks Reviewed:** 14
   - **Total Tasks Under Review:** 5
@@ -39,6 +39,7 @@
 | MBC-108   | [BE] Subscription: API Endpoints - Modify the Current User Endpoint  | 2H |   Alhaj Uddin      | Reviewed      |
 | MBC-50   | [BE] GetAll/GetBy Courses  | 24H |   Nazran Khondokar      | Done      |
 | MBC-117   | [FE] [IOS] When the app is opened, the "Welcome" page appears twice.    |  |   Abu Bakar      | In Progress      |
+| MBC-104   | [BE] Subscription: API Endpoints - Retrieve Active Subscription Details    | 4H |   Alhaj Uddin        | In Progress      |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
