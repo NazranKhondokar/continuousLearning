@@ -1,51 +1,43 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
-- **Reporting Period:** 10-02-2025 to 14-02-2025
-- **Report Date:** 14-02-2025 7:00 PM (BD Time)
+- **Reporting Period:** 18-02-2025 to 21-02-2025
+- **Report Date:** 21-02-2025 7:00 PM (BD Time)
 
 #### 1. Sprint Overview  
-- **Sprint Name:** Sprint 4, 5
-- **Sprint Duration:** 29-01-2025 to 11-02-2025 [Sprint 4], 12-02-2025 to 26-02-2025 [Sprint 5], 
+- **Sprint Name:** Sprint 5
+- **Sprint Duration:** 12-02-2025 to 26-02-2025 [Sprint 5], 
 
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 18
-  - **Total Tasks Pending (In Progress):** 1
+  - **Total Tasks Completed (Done):** 13
+  - **Total Tasks Pending (In Progress):** 0
 - **Ukrain Team**
-  - **Total Tasks Reviewed:** 16
-  - **Total Tasks Under Review:** 6
+  - **Total Tasks Reviewed:** 14
+  - **Total Tasks Under Review:** 5
 
 #### 3. Sprint Progress and Blockers
-- `MBC-76` There is an issue of apple-sign-in. The backend requires some changes. We provided two types of solutions in `Slack` on 7 February and also in meetings. Also, we reminded it in next day. They said they would provide a decision but still, we did not get any decision.
+
 
 #### 4. Jira Task Breakdown
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
-| MBC-19   | [Sprint 4][FE] Plan selection: Pro annual/ Pro monthly (Onboarding)    | 24H |   Abu Bakar      | Reviewed      |
-| MBC-74   | [Sprint 4][BE] Categories CRUD    | 4H |    Alhaj Uddin      | Reviewed      |
-| MBC-71   | [Sprint 4][BE] Changes in Codebase and code optimization    | 20H |    Nazran Khondokar      | Reviewed      |
-| MBC-88   | [Sprint 4][BE] Fix Categories Query for Articles    |  |    Nazran Khondokar      | Reviewed      |
-| MBC-76   | [Sprint 4][FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon      | Reviewed      |
-| MBC-47   | [BE] Database Schema & Migrations for Course Management   | 4H |   Alhaj Uddin      | Reviewed      |
-| MBC-79   |  [IOS]The app crashes, after clicking on the "Google" button on the "Sign Up" page    |  |    Shoroardi Sumon       | Reviewed      |
-| MBC-87   |  Onboarding section - Change the placement of the Subscription screen    | 6H |    Abu Bakar       | Reviewed      |
-| MBC-66   |  Onboarding + User settings: Add laser eyes avatars, change the switcher name    | 4H |    Abu Bakar       | Reviewed      |
-| MBC-76   |  The "Apple" button on the "Sign Up" page doesn't work    |8H  |    Shoroardi Sumon       | Reviewed      |
-| MBC-79   |   [IOS]The app crashes, after clicking on the "Google" button on the "Sign Up"    | 4H |    Shoroardi Sumon       | Reviewed      |
-| MBC-82   |   The application should only support vertical orientation    | 1H |    Shoroardi Sumon       | Reviewed      |
-| MBC-83   |   The "Back" button on the "Sign In" and "Sign Up" pages has different animations    | 2H |    Shoroardi Sumon       | Reviewed      |
-| MBC-75   |   [FE] Change API endpoints    | 2H |    Shoroardi Sumon       | Reviewed      |
-| MBC-91   | If the application is closed and reopened, the user is again asked to complete the onboarding process.   |  |   Abu Bakar      | Reviewed      |
-| MBC-95   | Fix RevenueCat Logout Issue After App Restart   |  |   Abu Bakar      | Reviewed      |
-| MBC-81   | Refactor Privacy URL Handling and Use App Constants  |  |   Abu Bakar      | Done      |
-| MBC-93   |   The "Bitcoin Price" section on the "Select Theme" page does not match the design    |  |    Shoroardi Sumon       | Done      |
-| MBC-49   | [BE] CRUD CoursesCategories    | 5H |    Alhaj Uddin      | Done      |
-| MBC-96   | Remove .env, service-account.json Files from Repository + additional fixes    |  |Nazran Khondokar| Done      |
-| MBC-97   | [BE] Fix the case when after each login, the user is forced to complete the onboarding process.    |  |    Alhaj Uddin      | Done      |
-| MBC-49   | [[BE] Create/Update/Delete Courses    | 24H |    Nazran Khondokar      | Done      |
-| MBC-90   | [FE] After each login, the user is forced to complete the onboarding process.   |  |   Abu Bakar      | In progress      |
+| MBC-113   | [FE] The "Appearance" page issue    |  |   Abu Bakar      | Reviewed      |
+| MBC-111   | [FE] After clicking the "Back" button on the "Appearance" page, the user sees the unsaved mode for a while   |   |   Abu Bakar      | Reviewed      |
+| MBC-110   | [FE] When the "Back" button is clicked on the "Preferred Exchange" page, the user's selection is saved.    |  |   Shoroardi Sumon      | Reviewed      |
+| MBC-100   | [FE] A pop-up confirming the successful name change appears every time the "Save Change" button is clicked.    |  |   Shoroardi Sumon      | Reviewed      |
+| MBC-90   | [FE] After each login, the user is forced to complete the onboarding process.   |  |   Abu Bakar      | Reviewed      |
+| MBC-89   | [FE] The "Email" field on the "Forgot Password" page accepts email that are not linked to a registered account.    |  |   Shoroardi Sumon      | Reviewed      |
+| MBC-99   | [FE] Separate Sign-Up and Sign-In Flows for “Sign in with Apple” Integration   |  |   Shoroardi Sumon      | Reviewed      |
+| MBC-116   | [FE] The page "Profile Info" should be renamed to "Personal Info" according to the design.   |  |   Shoroardi Sumon      | Reviewed      |
+| MBC-84   | [FE] The account existence check with the same email happens on the "Set Password" page     | |   Shoroardi Sumon      | Reviewed      |
+| MBC-81   | Refactor Privacy URL Handling and Use App Constants  |  |   Abu Bakar      | Reviewed      |
+| MBC-93   |   The "Bitcoin Price" section on the "Select Theme" page does not match the design    |  |    Shoroardi Sumon       | Reviewed      |
+| MBC-103   | [BE] Subscription: API Endpoints - Save Subscription Data    | 3H |    Alhaj Uddin      | Reviewed    |
+| MBC-102   | [BE] Subscription: Database Schema Changes   |  |    Alhaj Uddin      | Reviewed      |
+| MBC-108   | [BE] Subscription: API Endpoints - Modify the Current User Endpoint  | 2H |   Alhaj Uddin      | Reviewed      |
+| MBC-50   | [BE] GetAll/GetBy Courses  | 24H |   Nazran Khondokar      | Done      |
 
 
 #### 5. Next Steps & Upcoming Tasks
