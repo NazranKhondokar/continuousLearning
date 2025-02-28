@@ -17,7 +17,7 @@
   - **Total Tasks Under Review:** 6
 
 #### 3. Sprint Progress and Blockers
-- 
+- Sprint 6 has started today with upcoming tasks.
 
 #### 4. Jira Task Breakdown
 
