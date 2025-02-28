@@ -10,11 +10,11 @@
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 13
-  - **Total Tasks Pending (In Progress):** 2
+  - **Total Tasks Completed (Done):** 11
+  - **Total Tasks Pending (In Progress):** 0
 - **Ukrain Team**
-  - **Total Tasks Reviewed:** 14
-  - **Total Tasks Under Review:** 5
+  - **Total Tasks Reviewed:** 5
+  - **Total Tasks Under Review:** 6
 
 #### 3. Sprint Progress and Blockers
 - 
@@ -38,5 +38,6 @@
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
-  - 
+  - MBC-72 [FE] Course preview, learning process, video
+  - MBC-35 [FE] Subscription management
 - **Dependencies:** 
