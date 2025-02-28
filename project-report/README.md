@@ -29,7 +29,6 @@
 | MBC-100   | [Android] The avatars on the "Select Avatar"(Onboarding) page cropped display    |  |   Shoroardi Sumon      | Reviewed      |
 | MBC-118   | [FE] After each login, the user is forced to complete the onboarding process.   |  |   Abu Bakar      | Reviewed      |
 | MBC-115   | When trying to save the "Name" field with more than 103 characters, an error message "Failed to update user information" appears.    |  |   Shoroardi Sumon      | Done      |
-
 | MBC-51   | [BE] Quiz Management    | 24H | Nazran Khondokar        | Done      |
 | MBC-104   | [BE] Subscription: API Endpoints - Retrieve Active Subscription Details    | 4H |   Alhaj Uddin        | Done      |
 | MBC-105   | [BE] Subscription: API Endpoints - Update Subscription Data   | 2H |    Alhaj Uddin      | Done    |
