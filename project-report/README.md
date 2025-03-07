@@ -1,43 +1,37 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
-- **Reporting Period:** 24-02-2025 to 28-02-2025
-- **Report Date:** 28-02-2025 7:00 PM (BD Time)
+- **Reporting Period:** 03-03-2025 to 07-03-2025
+- **Report Date:** 07-03-2025 4:00 PM (BD Time)
 
 #### 1. Sprint Overview  
-- **Sprint Name:** Sprint 5
-- **Sprint Duration:** 12-02-2025 to 27-02-2025
+- **Sprint Name:** Sprint 6
+- **Sprint Duration:** 27-02-2025 to 13-03-2025
 
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 11
-  - **Total Tasks Pending (In Progress):** 0
+  - **Total Tasks Completed (Done):** 4
+  - **Total Tasks Pending (In Progress):** 2
 - **Ukrain Team**
-  - **Total Tasks Reviewed:** 5
-  - **Total Tasks Under Review:** 6
+  - **Total Tasks Reviewed:** 1
+  - **Total Tasks Under Review:** 10
 
 #### 3. Sprint Progress and Blockers
-- Sprint 6 has started today with upcoming tasks.
+- 
 
 #### 4. Jira Task Breakdown
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
-| MBC-112   | [FE] Always when the user opens "Preferred Exchange" page, "Coinbase" is selected.    |  |   Shoroardi Sumon      | Reviewed      |
-| MBC-117   | [FE] [IOS] When the app is opened, the "Welcome" page appears twice   |   |   Abu Bakar      | Reviewed      |
-| MBC-119   | If you change the theme without saving it, the "Sheet" will not match the selected theme.    |  |    Shoroardi Sumon       | Reviewed      |
-| MBC-100   | [Android] The avatars on the "Select Avatar"(Onboarding) page cropped display    |  |   Shoroardi Sumon      | Reviewed      |
-| MBC-118   | [FE] After each login, the user is forced to complete the onboarding process.   |  |   Abu Bakar      | Reviewed      |
-| MBC-115   | When trying to save the "Name" field with more than 103 characters, an error message "Failed to update user information" appears.    |  |   Shoroardi Sumon      | Done      |
-| MBC-51   | [BE] Quiz Management    | 24H | Nazran Khondokar        | Done      |
-| MBC-104   | [BE] Subscription: API Endpoints - Retrieve Active Subscription Details    | 4H |   Alhaj Uddin        | Done      |
-| MBC-105   | [BE] Subscription: API Endpoints - Update Subscription Data   | 2H |    Alhaj Uddin      | Done    |
-| MBC-106   | [BE] Subscription: API Endpoints - Cancel Subscription    | 2H |    Alhaj Uddin      | Done    |
-| MBC-107   | [BE] Subscription: API Endpoints - Retrieve Subscription History    | 4H |    Alhaj Uddin      | Done    |
+| MBC-70   | [FE] Courses: Implement Learning Hub Screens   | 24H |   Shoroardi Sumon      | Done      |
+| MBC-81   | [FE] Refactor Privacy URL Handling and Use App Constants   |   |   Abu Bakar      | Done      |
+| MBC-35   | [FE] Subscription management   |  40H |   Abu Bakar      | In Progress      |
+| MBC-72   | [FE] Course preview, learning process, video    | 32H |    Shoroardi Sumon  | In Progress       |
+| MBC-123   | [BE] Expand Adjustments for Retrieve Courses Methods    | 16H | Nazran Khondokar        | Done      |
+| MBC-120   | [BE] Implement functionality for handling RevenueCat webhooks    | 4H |   Alhaj Uddin        | Done      |
 
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
-  - MBC-72 [FE] Course preview, learning process, video
-  - MBC-35 [FE] Subscription management
+  - MBC-126 [BE] Implementing Media Storage on Backend
 - **Dependencies:** 
