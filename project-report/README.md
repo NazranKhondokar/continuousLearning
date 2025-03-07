@@ -17,7 +17,9 @@
   - **Total Tasks Under Review:** 10
 
 #### 3. Sprint Progress and Blockers
-- 
+- There is an R&D part in `MBC-120` for `RevenueCat webhooks`.
+- In `MBC-70`, some mismatches between FE and BE task descriptions make frontend development slower.
+- In [`MBC-35`](https://jira.devsx.net/browse/MBC-35), 
 
 #### 4. Jira Task Breakdown
 
