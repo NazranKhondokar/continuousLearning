@@ -19,7 +19,7 @@
 #### 3. Sprint Progress and Blockers
 - There is an R&D part in [`MBC-120`](https://jira.devsx.net/browse/MBC-120), for `RevenueCat webhooks`.
 - In [`MBC-70`](https://jira.devsx.net/browse/MBC-70), some mismatches between FE and BE task descriptions make frontend development slower.
-- In [`MBC-35`](https://jira.devsx.net/browse/MBC-35), 
+- In [`MBC-35`](https://jira.devsx.net/browse/MBC-35), Queries were raised in the Jira comment, but no response was received. Followed up via Slack, but got no reply. During the daily meeting, the tech lead acknowledged the comment and mentioned another developer would respond. However, clarification has not yet been received and that’s why the task is still in progress.
 
 #### 4. Jira Task Breakdown
 
