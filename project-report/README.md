@@ -1,11 +1,11 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
-- **Reporting Period:** 10-03-2025 to 14-03-2025
-- **Report Date:** 14-03-2025 10:00 PM (BD Time)
+- **Reporting Period:** 17-03-2025 to 21-03-2025
+- **Report Date:** 21-03-2025 04:00 PM (BD Time)
 
 #### 1. Sprint Overview  
-- **Sprint Name:** Sprint 6
-- **Sprint Duration:** 27-02-2025 to 13-03-2025
+- **Sprint Name:** Sprint 6, Sprint 7
+- **Sprint Duration:** [Sprint 6] 27-02-2025 to 17-03-2025, [Sprint 7] 18-03-2025 to 01-04-2025
 
 #### 2. Task Completion Summary
 
@@ -17,8 +17,7 @@
   - **Total Tasks Under Review:** 9
 
 #### 3. Sprint Progress and Blockers
-- Basically, [`MBC-72`](https://jira.devsx.net/browse/MBC-72), [`MBC-126`](https://jira.devsx.net/browse/MBC-126),[`MBC-127`](https://jira.devsx.net/browse/MBC-127) are delayed because dependant backend features ([`MBC-51`](https://jira.devsx.net/browse/MBC-51),[`MBC-123`](https://jira.devsx.net/browse/MBC-123)) did not reviewed in time. When we acknowledged the tech lead that we are stuck without merging those features, then he started to review. After his comment, we checked them the other 2 days.
-- In [`MBC-35`](https://jira.devsx.net/browse/MBC-35), Queries were raised in the Jira comment, but no response was received. Followed up via Slack, but got no reply. During the daily meeting, the tech lead acknowledged the comment and mentioned another developer would respond. However, clarification has not yet been received and that’s why the task is still in progress.
+- Our review process has been moving slower than ideal. As a result, we currently have a couple of pull requests (PRs) pending review in the Backend, which has left our developers waiting to proceed with implementing feedback from previous PRs.
 
 #### 4. Jira Task Breakdown
 
