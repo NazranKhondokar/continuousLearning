@@ -11,31 +11,31 @@
 
 - **Bangladesh Team**
   - **Total Tasks Completed (Done):** 6
-  - **Total Tasks Pending (In Progress):** 4
-- **Ukrain Team**
-  - **Total Tasks Reviewed:** 7
-  - **Total Tasks Under Review:** 9
+  - **Total Tasks Pending (In Progress):** 1
+- **Ukraine Team**
+  - **Total Tasks Reviewed:** 6
+  - **Total Tasks Under Review:** 11
 
 #### 3. Sprint Progress and Blockers
-- Our review process has been moving slower than ideal. As a result, we currently have a couple of pull requests (PRs) pending review in the Backend, which has left our developers waiting to proceed with implementing feedback from previous PRs.
+- The Ukraine Team review process has been moving slower than ideal. As a result, we currently have a couple of pull requests (PRs) pending review in the Backend, which has left our developers waiting to proceed with implementing feedback from previous PRs.
+- [MBC-127](https://jira.devsx.net/browse/MBC-127) was completed 3 days ago but could not test it because it depends on [MBC-126](https://jira.devsx.net/browse/MBC-126) which is  still in review.
+- They did not assign any task for one backend developer for the last 3 days.
 
 #### 4. Jira Task Breakdown
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
-| MBC-130   | [FE][IOS] When trying to save a photo uploaded from the gallery, an error appears.   |   |   Abu Bakar      | In Progress      |
-| MBC-125   | [FE]Upon re-entering the account, the user's "Name" appears as it was set during registration.   |   |   Abu Bakar      | Done |
-| MBC-128   | [FE]The "Laser Eyes" button does not reset after leaving the "Personal Info" page.   |   |   Abu Bakar      | Done |
-| MBC-124   | [FE]Update the price change chart on the "Select Theme" (Onboarding) page.   |   |   Abu Bakar      | Done |
+| MBC-133   | [FE] Bitcoin Main Screen Implementation   | 20H  |   Abu Bakar      | In Progress |
+| MBC-139   | [FE]Change the app icon from the default to custom   |   |   Abu Bakar      | Done |
 | MBC-129   | [FE]When clicking the "Save Changes" button multiple times, the success notification reappears each time.   |   |   Abu Bakar      | Done |
-| MBC-92   | [FE]The "Back" button on the "Check Email" page is incorrectly positioned.   |   |   Abu Bakar      | Done |
-| MBC-35   | [FE] Subscription management   |  40H |   Abu Bakar      | In Progress      |
-| MBC-72   | [FE] Course preview, learning process, video    | 32H |    Shoroardi Sumon  | In Progress       |
-| MBC-127   | [BE] Implement Additional Methods for Courses    | 6H | Nazran Khondokar        | In Progress      |
+| MBC-73   | [FE] Quiz Management    | 24H |    Shoroardi Sumon  | Done       |
+| MBC-127   | [BE] Implement Additional Methods for Courses    | 6H | Nazran Khondokar    | In Progress      |
 | MBC-126   | [BE] Implementing Media Storage on Backend    | 24H |   Alhaj Uddin        | Done      |
 
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
-  - [BE] Remove Subscription ID from Mobile and Implement on Backend
+  - [MBC-134][FE] Transaction Review & Export
+  - [MBC-135][FE] Wallet's Page + Wallet's Transaction Review & Export
+  - [MBC-136][FE] Create/Edit/Delete Wallet
 - **Dependencies:** 
