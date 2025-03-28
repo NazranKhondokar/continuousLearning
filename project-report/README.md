@@ -26,10 +26,10 @@
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
 | MBC-133   | [FE] Bitcoin Main Screen Implementation   | 20H  |   Abu Bakar      | Done |
-| MBC-134   | [FE]Transaction Review & Export   |   |   Abu Bakar      | Done |
-| MBC-140   | Remove alpha channel from icons   |   |   Abu Bakar      | Done |
+| MBC-134   | [FE] Transaction Review & Export   |   |   Abu Bakar      | Done |
+| MBC-140   | [FE] Remove alpha channel from icons   |   |   Abu Bakar      | Done |
 | MBC-130   | [IOS] When trying to save a photo uploaded from the gallery, an error appears   |   |   Abu Bakar      | Reviewed |
-| MBC-143   | Onboarding Screen Shows Grey Screen in TestFlight Build   |  |    Shoroardi Sumon  | Reviewed       |
+| MBC-143   | [FE] Onboarding Screen Shows Grey Screen in TestFlight Build   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-136   | [FE] Create/Edit/Delete Wallet   | 12H |    Shoroardi Sumon  | Done       |
 | MBC-73   | [FE] Quiz   | 12H |    Shoroardi Sumon  | Reviewed       |
 | MBC-76   | [FE] The "Apple" button on the "Sign Up" page doesn't work   | 8H |    Shoroardi Sumon  | Reviewed       |
