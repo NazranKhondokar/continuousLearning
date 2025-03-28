@@ -19,7 +19,7 @@
 #### 3. Sprint Progress and Blockers
 - The Ukraine Team review process has been moving slower than ideal. As a result, we currently have a couple of pull requests (PRs) pending review in the Backend part.
 - They have not assigned any tasks to backend developers for the last 4 days. Finally, the Ukraine Team assigned a task a couple of hours ago.
-- Backend member `Alhaj Uddin` check review comments.
+- Backend member `Alhaj Uddin` checked review comments.
 
 #### 4. Jira Task Breakdown
 
