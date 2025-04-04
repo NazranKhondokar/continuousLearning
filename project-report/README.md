@@ -17,7 +17,7 @@
   - **Total Tasks Under Review:** 5
 
 #### 3. Sprint Progress and Blockers
-- They have not assigned any tasks to a backend developer for the last 2 days.
+- They have not assigned any tasks to a backend developer for the last 7 working days.
 
 #### 4. Jira Task Breakdown
 
