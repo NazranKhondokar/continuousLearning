@@ -25,7 +25,7 @@
 |---------|-------------------|-----------------|--------------------|----------------------|
 | MBC-142   | [FE] Connect push notifications   | 10H  |   Abu Bakar      | In Progress |
 | MBC-144   | [FE] Onboarding flow blocked – interests not saved after selection   |   |   Abu Bakar      |  In Progress |
-| MBC-144   | [FE] Onboarding flow blocked – interests not saved after selection   |   |   Alhaj Uddin     |  In Progress |
+| MBC-144   | [BE] Onboarding flow blocked – interests not saved after selection   |   |   Alhaj Uddin     |  In Progress |
 | MBC-143   | [FE] Wallet's Page + Wallet's Transaction Review & Export   | 16H |    Shoroardi Sumon  | In Progress       |
 | MBC-141   | [BE] Implement push notifications support    | 24H | Nazran Khondokar    |In Progress       |
 
