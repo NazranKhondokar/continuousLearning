@@ -24,7 +24,6 @@
 |---------|-------------------|-----------------|--------------------|----------------------|
 | MBC-138   | [FE] Alerts UI   | 30H  |   Abu Bakar      | Reviewed |
 | MBC-158   | [FE] The "Confirm Password" field should be required   |   |   Shoroardi Sumon      |  Done |
-
 | MBC-159   | [FE] When the app is closed after registration, the user is automatically logged into the registered account upon reopening the app.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-161   | [FE] When going to the "Log In" page from the "Check Email" page, the "Back" button takes the user back to the "Check Email" page.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-168   | [FE] Rename the page "Subscriptions"   |  |    Shoroardi Sumon  | Done       |
