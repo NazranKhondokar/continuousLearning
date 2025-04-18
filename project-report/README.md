@@ -27,6 +27,8 @@
 | MBC-159   | [FE] When the app is closed after registration, the user is automatically logged into the registered account upon reopening the app.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-161   | [FE] When going to the "Log In" page from the "Check Email" page, the "Back" button takes the user back to the "Check Email" page.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-168   | [FE] Rename the page "Subscriptions"   |  |    Shoroardi Sumon  | Done       |
+| MBC-136   | [FE] Create/Edit/Delete Wallet (API Integration)   | 12H |    Shoroardi Sumon  | Reviewed       |
+| MBC-167   | [FE] When navigating to the "Personal Info" page, the image set through "Own Photo" flickers   |  |    Shoroardi Sumon  | Done       |
 | MBC-160   | [FE] The color of the buttons in the bottom menu should be dimmed, except for the one selected by the user.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-149   | [BE] Transactions CRUD   |  18H |   Alhaj Uddin     |  Done |
 | MBC-146   | [BE] Get total balance by selected currency and selected wallet (optional)    | 16H | Nazran Khondokar    | In Progress       |
