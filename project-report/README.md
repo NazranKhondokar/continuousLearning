@@ -1,7 +1,7 @@
 ### Weekly Development Report
 - **Project Name:** My Bitcoin Canvas
-- **Reporting Period:** 14-04-2025 to 18-04-2025
-- **Report Date:** 18-04-2025 07:00 PM (BD Time)
+- **Reporting Period:** 21-04-2025 to 25-04-2025
+- **Report Date:** 25-04-2025 07:00 PM (BD Time)
 
 #### 1. Sprint Overview  
 - **Sprint Name:** Sprint 8
@@ -10,11 +10,11 @@
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 10
-  - **Total Tasks Pending (In Progress):** 1
+  - **Total Tasks Completed (Done):** 12
+  - **Total Tasks Pending (In Progress):** 0
 - **Ukraine Team**
-  - **Total Tasks Reviewed:** 8
-  - **Total Tasks Under Review:** 2
+  - **Total Tasks Reviewed:** 10
+  - **Total Tasks Under Review:** 3
 
 #### 3. Sprint Progress and Blockers
 
@@ -22,21 +22,21 @@
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
-| MBC-138   | [FE] Alerts UI   | 30H  |   Abu Bakar      | Reviewed |
-| MBC-158   | [FE] The "Confirm Password" field should be required   |   |   Shoroardi Sumon      |  Reviewed |
+| MBC-163   | The background of the "Cancel subscriptions" button does not match the design   |   |   Abu Bakar      | Reviewed |
 | MBC-159   | [FE] When the app is closed after registration, the user is automatically logged into the registered account upon reopening the app.   |  |    Shoroardi Sumon  | Reviewed       |
-| MBC-161   | [FE] When going to the "Log In" page from the "Check Email" page, the "Back" button takes the user back to the "Check Email" page.   |  |    Shoroardi Sumon  | Reviewed       |
-| MBC-168   | [FE] Rename the page "Subscriptions"   |  |    Shoroardi Sumon  | Done       |
-| MBC-136   | [FE] Create/Edit/Delete Wallet (API Integration)   | 12H |    Shoroardi Sumon  | Reviewed       |
-| MBC-167   | [FE] When navigating to the "Personal Info" page, the image set through "Own Photo" flickers   |  |    Shoroardi Sumon  | Done       |
-| MBC-160   | [FE] The color of the buttons in the bottom menu should be dimmed, except for the one selected by the user.   |  |    Shoroardi Sumon  | Reviewed       |
-| MBC-149   | [BE] Transactions CRUD   |  18H |   Alhaj Uddin     |  Done |
-| MBC-146   | [BE] Get total balance by selected currency and selected wallet (optional)    | 16H | Nazran Khondokar    | In Progress       |
-| MBC-152   | [BE] Wallets CRUD    | 20H | Nazran Khondokar    | Reviewed       |
+| MBC-172   | The filter on the "All Courses" page should be called "Filter Courses"  |   |   Shoroardi Sumon      |  Reviewed |
+| MBC-169   | Fix Social Sign-in buttons alignment  |   |   Abu Bakar      |  Reviewed |
+| MBC-173   | All words in the section titles on the "Learning Hub" page should start with a capital letter.   |  |    Shoroardi Sumon  | Reviewed       |
+| MBC-174   | The background of the app in light mode does not match the design.   |  |    Shoroardi Sumon  | Reviewed       |
+| MBC-176   | [FE] The bottom menu in the light theme does not match the design.   |  |    Shoroardi Sumon  | Reviewed       |
+| MBC-175   | [FE] The size of the background highlight for the selected page in the bottom menu should be bigger.   |  |    Shoroardi Sumon  | Reviewed       |
+| MBC-172   | [FE] The filter on the "All Courses" page should be called "Filter Courses"  | Reviewed       |
+| MBC-170   | [FE] When navigating to the "Home" page, the image flickers   |  |    Shoroardi Sumon  |   Done     |
+| MBC-149   | [BE] Transactions CRUD   |  18H |   Alhaj Uddin     |  Reviewed |
+| MBC-150   | [BE] Transactions Export CSV  |  14H |   Alhaj Uddin     |  Done |
+| MBC-154   | [BE] Alerts CRUD   | 20H | Nazran Khondokar    | Done       |
 
 #### 5. Next Steps & Upcoming Tasks
 - **Upcoming Tasks:**
-  - MBC-154 [BE] Alerts CRUD
   - MBC-151 [BE] Transactions Export PDF
-  - MBC-150 [BE] Transactions Export CSV
 - **Dependencies:** 
