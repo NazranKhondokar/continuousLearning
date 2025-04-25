@@ -22,6 +22,8 @@
 
 | Task ID | Task Name         | Estimated Hours | Assigned Developer | Status (Done/Review) |
 |---------|-------------------|-----------------|--------------------|----------------------|
+| MBC-178   | The "Start Course" button is missing on the "Course Details" page.   |   |   Abu Bakar      | In Progress |
+| MBC-180   | When navigating to the "Profile" page, the image uploaded via "Own Photo" flickers.   |   |   Shoroardi Sumon      | In Progress |
 | MBC-163   | The background of the "Cancel subscriptions" button does not match the design   |   |   Abu Bakar      | Reviewed |
 | MBC-159   | [FE] When the app is closed after registration, the user is automatically logged into the registered account upon reopening the app.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-172   | The filter on the "All Courses" page should be called "Filter Courses"  |   |   Shoroardi Sumon      |  Reviewed |
