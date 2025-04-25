@@ -10,8 +10,8 @@
 #### 2. Task Completion Summary
 
 - **Bangladesh Team**
-  - **Total Tasks Completed (Done):** 12
-  - **Total Tasks Pending (In Progress):** 0
+  - **Total Tasks Completed (Done):** 11
+  - **Total Tasks Pending (In Progress):** 2
 - **Ukraine Team**
   - **Total Tasks Reviewed:** 10
   - **Total Tasks Under Review:** 3
