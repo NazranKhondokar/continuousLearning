@@ -30,7 +30,6 @@
 | MBC-174   | The background of the app in light mode does not match the design.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-176   | [FE] The bottom menu in the light theme does not match the design.   |  |    Shoroardi Sumon  | Reviewed       |
 | MBC-175   | [FE] The size of the background highlight for the selected page in the bottom menu should be bigger.   |  |    Shoroardi Sumon  | Reviewed       |
-| MBC-172   | [FE] The filter on the "All Courses" page should be called "Filter Courses"  | Reviewed       |
 | MBC-170   | [FE] When navigating to the "Home" page, the image flickers   |  |    Shoroardi Sumon  |   Done     |
 | MBC-149   | [BE] Transactions CRUD   |  18H |   Alhaj Uddin     |  Reviewed |
 | MBC-150   | [BE] Transactions Export CSV  |  14H |   Alhaj Uddin     |  Done |
