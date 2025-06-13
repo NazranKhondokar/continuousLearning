@@ -1,4 +1,4 @@
-- `/curlable_data/gold_price_trends?target_day=2025-05-21`
+- *`/curlable_data/gold_price_trends?target_day=2025-05-21`*
 
 It works for
 ```
@@ -14,7 +14,7 @@ It works for
     },
 ```
 
-- `/curlable_data/sp500_trends?target_day=2025-05-29`
+- *`/curlable_data/sp500_trends?target_day=2025-05-29`*
 
 It does not work for
 ```
