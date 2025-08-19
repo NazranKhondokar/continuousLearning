@@ -1,7 +1,14 @@
 ## Update `$JAVA_HOME` on Ubuntu
 - Check the available jdks
 ```bash
+nazran@naxalinx:~$ sudo update-alternatives --config java
+```
+
+## Update `$JAVA_HOME` on Ubuntu
+- Check the available jdks
+```bash
 update-alternatives --config java
+
 ```
 - Copy the selection path without `/bin/java`
 ```bash
