@@ -7,11 +7,8 @@ Running a **GCP Cloud Run service with a database connection** requires some con
 Common options:
 
 * **Cloud SQL** (MySQL, PostgreSQL, SQL Server)
-* **Firestore** (NoSQL)
-* **BigQuery** (for analytics)
-* **External DB** (self-hosted or on other cloud providers)
 
-For this example, I'll assume **Cloud SQL (PostgreSQL or MySQL)** because it’s most common.
+We use **Cloud SQL (PostgreSQL or MySQL)**
 
 ---
 
@@ -91,6 +88,16 @@ Quota project "bitcoin-canvas-428314" was added to ADC which can be used by Goog
 nazran@naxalinx:~$ ./cloud-sql-proxy bitcoin-canvas-428314:us-central1:postgres-production --port 5432
 2025/08/21 15:00:32 Authorizing with Application Default Credentials
 2025/08/21 15:00:32 [bitcoin-canvas-428314:us-central1:postgres-production] Listening on 127.0.0.1:5432
+```
+* Step 5: After connecting to DBeaver with the below credentials, then get logs like
+```
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+```
+```
 2025/08/21 15:00:32 The proxy has started successfully and is ready for new connections!
 2025/08/21 15:03:32 [bitcoin-canvas-428314:us-central1:postgres-production] Accepted connection from 127.0.0.1:55070
 2025/08/21 15:03:40 [bitcoin-canvas-428314:us-central1:postgres-production] client closed the connection
@@ -98,5 +105,3 @@ nazran@naxalinx:~$ ./cloud-sql-proxy bitcoin-canvas-428314:us-central1:postgres-
 2025/08/21 15:04:11 [bitcoin-canvas-428314:us-central1:postgres-production] Accepted connection from 127.0.0.1:32774
 ```
 ---
-
-
