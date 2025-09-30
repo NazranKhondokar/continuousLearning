@@ -1,9 +1,7 @@
 # Multi-Service SSL Setup for consultinghub.xyz
 
-## Step 1: Update Namecheap DNS Records
-
-Add these A records in Namecheap Advanced DNS:
-
+### 1. **Update DNS in Namecheap:**
+Add these A records:
 ```
 Type    Host    Value               TTL
 A       @       217.15.162.33       Automatic
@@ -12,22 +10,7 @@ A       admin   217.15.162.33       Automatic
 A       api     217.15.162.33       Automatic
 ```
 
-Directory Structure Used:
-```bash
-/root/nexadocs/
-├── docker-compose.yml (master)
-├── multi-service-ssl-setup.sh
-├── nginx/
-├── certbot/
-├── NexaDoc/          (backend)
-├── NexaDoc_front/    (frontend - your exact name)
-└── NexaDoc_Admin/    (admin panel)
-```
-
-## Step 2: Create Master Docker Compose
-
-Create a new `docker-compose.yml` in a master directory (like `/root/nexadocs/`):
-
+### 2. **Stop Current Services:**
 ```bash
 cd /root/nexadocs/NexaDoc && docker-compose down
 cd /root/nexadocs/NexaDoc_Admin && docker-compose down  
@@ -38,6 +21,15 @@ docker stop nginx-proxy 2>/dev/null || true
 docker rm nginx-proxy 2>/dev/null || true
 ```
 
+### 3. **Create Master Setup:**
+```bash
+cd /root/nexadocs
+
+# Create the master docker-compose.yml
+nano docker-compose.yml
+```
+
+**Copy this updated docker-compose.yml:**
 ```yaml
 version: '3.8'
 
@@ -64,7 +56,7 @@ services:
   frontend:
     image: nexadoc_front-nextjs
     build:
-      context: ./NexaDoc_front
+      context: ./NexaDoc_front  # Updated to match your directory
       args:
         NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL}
         NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL}
@@ -81,7 +73,7 @@ services:
     expose:
       - "3000"
     env_file:
-      - ./NexaDoc_front/.env
+      - ./NexaDoc_front/.env  # Updated path
     environment:
       - NODE_ENV=${NODE_ENV}
     restart: unless-stopped
@@ -140,19 +132,12 @@ networks:
     driver: bridge
 ```
 
-## Step 3: Create Multi-Service Nginx Config
-
-Create SSL Setup Script:
+### 4. **Create SSL Setup Script:**
 ```bash
 nano multi-service-ssl-setup.sh
 ```
-Copy the script below and paste that file.
 
-```bash
-chmod +x multi-service-ssl-setup.sh
-./multi-service-ssl-setup.sh
-```
-
+**Copy this updated multi-service-ssl-setup.sh:**
 ```nginx
 events {
     worker_connections 1024;
@@ -280,8 +265,25 @@ http {
 }
 ```
 
-Result:
+### 5. **Run Setup:**
+```bash
+chmod +x multi-service-ssl-setup.sh
+./multi-service-ssl-setup.sh
+```
 
-https://consultinghub.xyz → Frontend (NexaDoc_front on port 3000)
-https://admin.consultinghub.xyz → Admin Panel (NexaDoc_Admin on port 4000)
-https://api.consultinghub.xyz → Backend API (NexaDoc on port 7000)
+## Directory Structure Used:
+```
+/root/nexadocs/
+├── docker-compose.yml (master)
+├── multi-service-ssl-setup.sh
+├── nginx/
+├── certbot/
+├── NexaDoc/          (backend)
+├── NexaDoc_front/    (frontend - your exact name)
+└── NexaDoc_Admin/    (admin panel)
+```
+
+## Result:
+- **https://consultinghub.xyz** → Frontend (`NexaDoc_front` on port 3000)
+- **https://admin.consultinghub.xyz** → Admin Panel (`NexaDoc_Admin` on port 4000)
+- **https://api.consultinghub.xyz** → Backend API (`NexaDoc` on port 7000)
