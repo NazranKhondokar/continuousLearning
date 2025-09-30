@@ -12,9 +12,31 @@ A       admin   217.15.162.33       Automatic
 A       api     217.15.162.33       Automatic
 ```
 
+Directory Structure Used:
+```bash
+/root/nexadocs/
+├── docker-compose.yml (master)
+├── multi-service-ssl-setup.sh
+├── nginx/
+├── certbot/
+├── NexaDoc/          (backend)
+├── NexaDoc_front/    (frontend - your exact name)
+└── NexaDoc_Admin/    (admin panel)
+```
+
 ## Step 2: Create Master Docker Compose
 
 Create a new `docker-compose.yml` in a master directory (like `/root/nexadocs/`):
+
+```bash
+cd /root/nexadocs/NexaDoc && docker-compose down
+cd /root/nexadocs/NexaDoc_Admin && docker-compose down  
+cd /root/nexadocs/NexaDoc_front && docker-compose down
+
+# Clean up existing nginx
+docker stop nginx-proxy 2>/dev/null || true
+docker rm nginx-proxy 2>/dev/null || true
+```
 
 ```yaml
 version: '3.8'
@@ -120,7 +142,16 @@ networks:
 
 ## Step 3: Create Multi-Service Nginx Config
 
-Create `nginx/nginx.conf`:
+Create SSL Setup Script:
+```bash
+nano multi-service-ssl-setup.sh
+```
+Copy the script below and paste that file.
+
+```bash
+chmod +x multi-service-ssl-setup.sh
+./multi-service-ssl-setup.sh
+```
 
 ```nginx
 events {
@@ -248,3 +279,9 @@ http {
     }
 }
 ```
+
+Result:
+
+https://consultinghub.xyz → Frontend (NexaDoc_front on port 3000)
+https://admin.consultinghub.xyz → Admin Panel (NexaDoc_Admin on port 4000)
+https://api.consultinghub.xyz → Backend API (NexaDoc on port 7000)
