@@ -287,3 +287,28 @@ chmod +x multi-service-ssl-setup.sh
 - **https://consultinghub.xyz** → Frontend (`NexaDoc_front` on port 3000)
 - **https://admin.consultinghub.xyz** → Admin Panel (`NexaDoc_Admin` on port 4000)
 - **https://api.consultinghub.xyz** → Backend API (`NexaDoc` on port 7000)
+----------------------------------------
+
+
+## 1. **'ContainerConfig' KeyError**
+
+This is the critical error. It happens when Docker Compose tries to recreate containers but can't read the image metadata properly. This typically occurs when:
+
+- **Images are corrupted or incomplete** - Your existing images (`nexa_doc_back_image`, `nexadoc_front-nextjs`, `nexadoc_admin-nextjs`) may have incomplete metadata
+- **Docker image cache issues** - Stale or corrupted image data
+
+## Quick Fix Steps:
+
+```bash
+cd ~/nexadocs
+
+# 1. Clean up
+docker-compose down
+docker rmi nexa_doc_back_image nexadoc_front-nextjs nexadoc_admin-nextjs -f
+
+# 2. Rebuild images
+docker-compose build --no-cache
+
+# 3. Start services
+docker-compose up -d
+```
