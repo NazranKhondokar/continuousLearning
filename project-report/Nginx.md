@@ -1,3 +1,4 @@
+It's running! But with an nginx port.
 ```bash
 # Frontend (User Panel)
 https://consultinghub.xyz:9443
@@ -9,9 +10,10 @@ https://admin.consultinghub.xyz:9443
 https://api.consultinghub.xyz:9443
 ```
 
-Three options:
+If we remove the `9443`, we use three options:
+
 ## Option 1: Use netbill360 nginx consultinghub also
-You can add your consultinghub.xyz domains to the existing `netbill360_nginx_dev` container. Both applications would share the same nginx on ports 80/443.
+Add your consultinghub.xyz domains to the existing `netbill360_nginx_dev` container. Both applications would share the same nginx on ports 80/443.
 
 This way:
 - `consultinghub.xyz` → accessible without port numbers
@@ -30,6 +32,8 @@ docker stop netbill360_nginx_dev
 
 ## Option 3: Run netbill360 on different ports
 Move netbill360 to alternative ports (like 8080/8443) so consultinghub can use 80/443.
+
+
 
 ---
 
