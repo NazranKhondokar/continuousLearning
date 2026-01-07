@@ -533,20 +533,6 @@ Add this line:
 
 ---
 
-## Security Best Practices
-
-1. **Never commit credentials** to version control
-2. Use **strong passwords** for all services
-3. Keep **Docker images updated** regularly
-4. Enable **firewall rules** (allow only 80, 443, SSH)
-5. Use **environment-specific** `.env` files
-6. Rotate **API keys and tokens** periodically
-7. Monitor **logs** for suspicious activity
-8. Implement **rate limiting** on Nginx
-9. Use **secrets management** for production
-
----
-
 ## Troubleshooting
 
 ### SSL Certificate Issues
